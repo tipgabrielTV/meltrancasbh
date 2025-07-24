@@ -1,5 +1,4 @@
 /* Importação de Fontes (Exemplo: Google Fonts) */
-/* Lembre-se: 'Arial Nova' não é uma Google Font. Se você quer essa fonte, ela precisa estar instalada no sistema do usuário ou ser fornecida por um serviço de fontes específico. Caso contrário, o navegador usará uma fonte sans-serif padrão. */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Roboto:wght@400;500&display=swap');
 
 :root {
@@ -32,6 +31,12 @@
     --cor-rodape-fundo: #1a1a1a; /* Fundo do footer */
     --cor-rodape-texto: #eeeeee; /* Texto do footer */
     --cor-icones-sociais: #ffffff; /* Ícones sociais */
+
+    /* Novas variáveis para a seção de serviços em destaque */
+    --servico-card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --servico-card-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    --servico-item-title-color: var(--primary-color); /* Cor do título do serviço */
+    --servico-item-text-color: var(--gray-dark); /* Cor do texto do serviço */
 }
 
 /* Base e Tipografia */
@@ -40,14 +45,14 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: var(--cor-texto-padrao); /* Ativar e personalizar */
-    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    color: var(--cor-texto-padrao);
+    background-color: var(--cor-fundo-geral);
     overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Fira Sans', sans-serif;
-    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    color: var(--cor-titulo-principal);
     margin-bottom: 1rem;
 }
 
@@ -55,17 +60,17 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Arial Nova', sans-serif; /* Se Arial Nova não carregar, ele usará a próxima fonte disponível */
     font-size: 1.3rem;
     margin-bottom: 30px;
-    color: var(--cor-subtitulo-hero); /* Ativar e personalizar */
+    color: var(--cor-subtitulo-hero);
 }
 
 a {
     text-decoration: none;
-    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    color: var(--cor-titulo-principal);
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--secondary-color); /* Você pode usar secondary-color ou outra variável */
+    color: var(--secondary-color);
 }
 
 .container {
@@ -87,44 +92,46 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: var(--cor-botao-primario-fundo); /* Ativar e personalizar */
-    color: var(--cor-botao-primario-texto); /* Ativar e personalizar */
+    background-color: var(--cor-botao-primario-fundo);
+    color: var(--cor-botao-primario-texto);
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: var(--secondary-color); /* Pode usar secondary-color para o hover ou definir nova variável */
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
 .btn-whatsapp {
-    background-color: var(--whatsapp-green); /* Ativar e personalizar */
-    color: var(--white); /* Ativar e personalizar */
+    background-color: var(--whatsapp-green);
+    color: var(--white);
+    margin-left: 10px; /* Espaçamento entre botões */
 }
 
 .btn-whatsapp:hover {
-    background-color: #20b05b; /* Um verde um pouco mais escuro ao passar o mouse */
+    background-color: #20b05b;
     transform: translateY(-2px);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--cor-botao-secundario-texto); /* Ativar e personalizar */
-    border: 2px solid var(--cor-botao-secundario-borda); /* Ativar e personalizar */
+    color: var(--cor-botao-secundario-texto);
+    border: 2px solid var(--cor-botao-secundario-borda);
+    margin-left: 10px; /* Espaçamento entre botões */
 }
 
 .btn-secondary:hover {
-    background-color: var(--cor-botao-secundario-borda); /* Ativar e personalizar */
-    color: var(--white); /* Ativar e personalizar */
+    background-color: var(--cor-botao-secundario-borda);
+    color: var(--white);
     transform: translateY(-2px);
 }
 
 /* Header e Navegação */
 header {
-    background-color: var(--cor-cabecalho-fundo); /* Ativar e personalizar */
-    color: var(--cor-cabecalho-texto); /* Ativar e personalizar */
+    background-color: var(--cor-cabecalho-fundo);
+    color: var(--cor-cabecalho-texto);
     padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -146,7 +153,7 @@ nav {
 }
 
 .logo a {
-    color: var(--cor-cabecalho-texto); /* Ativar e personalizar */
+    color: var(--cor-cabecalho-texto);
     text-decoration: none;
 }
 
@@ -162,7 +169,7 @@ nav {
 }
 
 .nav-links a {
-    color: var(--cor-cabecalho-texto); /* Ativar e personalizar */
+    color: var(--cor-cabecalho-texto);
     font-weight: 600;
     padding: 5px 0;
     position: relative;
@@ -177,14 +184,14 @@ nav {
     display: block;
     margin-top: 5px;
     right: 0;
-    background: var(--secondary-color); /* Ativar e personalizar */
+    background: var(--secondary-color);
     transition: width 0.4s ease;
 }
 
 .nav-links a:hover::after {
     width: 100%;
     left: 0;
-    background: var(--secondary-color); /* Ativar e personalizar */
+    background: var(--secondary-color);
 }
 
 .burger {
@@ -199,7 +206,7 @@ nav {
 .burger div {
     width: 100%;
     height: 3px;
-    background-color: var(--cor-cabecalho-texto); /* Ativar e personalizar */
+    background-color: var(--cor-cabecalho-texto);
     border-radius: 5px;
     transition: all 0.3s ease;
 }
@@ -207,7 +214,7 @@ nav {
 /* Hero Section */
 .hero-section {
     background: url('close-de-uma-mulher-de-biquini_1048944-22595275.jpg') no-repeat center center/cover;
-    color: var(--cor-cabecalho-texto); /* Ativar e personalizar (texto geral na hero) */
+    color: var(--cor-cabecalho-texto);
     text-align: center;
     padding: 150px 20px;
     display: flex;
@@ -225,7 +232,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Overlay escuro (manter ou personalizar) */
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
@@ -237,71 +244,95 @@ nav {
     font-size: 3.5rem;
     margin-bottom: 20px;
     line-height: 1.2;
-    color: var(--cor-cabecalho-texto); /* Ativar e personalizar (título H1 na hero) */
+    color: var(--cor-cabecalho-texto);
 }
 
-/* Destaques de Serviços */
+/* Destaques de Serviços (Seção Mais Bonita) */
 .destaques-servicos, .galeria-preview, .depoimentos, .contact-form-section, .info-page-content, .instagram-feed {
     padding: 80px 20px;
     text-align: center;
-    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    background-color: var(--cor-fundo-geral);
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Manter sombra ou personalizar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .destaques-servicos h2, .galeria-preview h2, .depoimentos h2, .contact-form-section h2, .info-page-content h2, .instagram-feed h2 {
     font-size: 2.5rem;
     margin-bottom: 50px;
-    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    color: var(--cor-titulo-principal);
 }
 
 .servicos-grid {
     display: grid;
+    /* Para 6 itens, podemos fazer 3 colunas em telas maiores */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    max-width: 1000px;
+    max-width: 1200px; /* Aumentado para melhor visualização dos 6 itens */
     margin: 0 auto;
 }
 
 .servico-item {
-    background-color: var(--cor-servico-item-fundo); /* Ativar e personalizar */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    background-color: var(--cor-servico-item-fundo);
+    padding: 30px; /* Aumentado o padding */
+    border-radius: 12px; /* Borda mais arredondada */
+    box-shadow: var(--servico-card-shadow); /* Sombra mais destacada */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    position: relative; /* Para efeitos de hover mais avançados se necessário */
+    overflow: hidden; /* Garante que a imagem arredondada não vaze */
+    display: flex; /* Para centralizar o conteúdo verticalmente */
+    flex-direction: column;
+    justify-content: space-between; /* Espaço entre imagem/título/texto/botão */
 }
 
 .servico-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Manter sombra ou personalizar */
+    transform: translateY(-10px) scale(1.02); /* Levemente mais para cima e zoom */
+    box-shadow: var(--servico-card-hover-shadow); /* Sombra ao passar o mouse */
 }
 
 .servico-item img {
     width: 100%;
-    height: 200px;
+    height: 220px; /* Altura um pouco maior para a imagem */
     object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    border-radius: 8px; /* Borda da imagem dentro do card */
+    margin-bottom: 20px; /* Mais espaço para o título */
+    transition: transform 0.3s ease; /* Transição para o zoom da imagem no hover */
+}
+
+.servico-item:hover img {
+    transform: scale(1.03); /* Zoom sutil na imagem ao passar o mouse */
 }
 
 .servico-item h3 {
-    font-size: 1.5rem;
-    color: var(--cor-titulo-principal); /* Ativar e personalizar */
-    margin-bottom: 10px;
+    font-size: 1.6rem; /* Título um pouco maior */
+    color: var(--servico-item-title-color);
+    margin-bottom: 15px; /* Mais espaço para o texto */
+    text-transform: uppercase; /* Deixa o título em caixa alta */
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
 }
 
 .servico-item p {
-    font-size: 0.95rem;
-    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+    font-size: 1rem;
+    color: var(--servico-item-text-color);
+    line-height: 1.7;
+    margin-bottom: 25px; /* Mais espaço antes do botão */
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+}
+
+.servico-item .btn-primary {
+    align-self: center; /* Centraliza o botão dentro do item */
+    padding: 10px 22px; /* Ajuste no padding do botão */
+    font-size: 0.95rem; /* Ajuste no tamanho da fonte do botão */
+    margin-top: auto; /* Empurra o botão para a parte inferior */
 }
 
 /* Galeria Preview */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    /* Ajustado para 3 colunas em telas maiores para 6 imagens */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Espaçamento uniforme */
     max-width: 1200px;
     margin: 0 auto 30px auto;
 }
@@ -310,8 +341,9 @@ nav {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    background-color: var(--cor-servico-item-fundo); /* Para preencher se a imagem não carregar */
 }
 
 .gallery-item img {
@@ -332,8 +364,8 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--cor-galeria-overlay); /* Ativar e personalizar */
-    color: var(--white); /* Ativar e personalizar (cor do ícone) */
+    background-color: var(--cor-galeria-overlay);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -348,14 +380,14 @@ nav {
 
 /* Depoimentos */
 .depoimentos {
-    background-color: var(--cor-depoimentos-fundo); /* Ativar e personalizar */
-    color: var(--cor-depoimentos-texto); /* Ativar e personalizar */
+    background-color: var(--cor-depoimentos-fundo);
+    color: var(--cor-depoimentos-texto);
     padding: 60px 20px;
     border-radius: 10px;
 }
 
 .depoimentos h2 {
-    color: var(--white); /* Ativar e personalizar (título na seção de depoimentos) */
+    color: var(--white);
 }
 
 .depoimento-carrossel {
@@ -370,11 +402,11 @@ nav {
 
 .depoimento-item {
     flex: 0 0 350px;
-    background-color: rgba(255, 255, 255, 0.9); /* Ativar e personalizar */
-    color: var(--cor-depoimentos-texto); /* Ativar e personalizar */
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--cor-depoimentos-texto);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     scroll-snap-align: start;
     display: flex;
@@ -391,13 +423,13 @@ nav {
 
 .depoimento-item span {
     font-weight: 600;
-    color: var(--cor-titulo-principal); /* Ativar e personalizar (nome no depoimento) */
+    color: var(--cor-titulo-principal);
 }
 
 /* Footer */
 footer {
-    background-color: var(--cor-rodape-fundo); /* Ativar e personalizar */
-    color: var(--cor-rodape-texto); /* Ativar e personalizar */
+    background-color: var(--cor-rodape-fundo);
+    color: var(--cor-rodape-texto);
     padding: 50px 20px;
     text-align: center;
 }
@@ -419,7 +451,7 @@ footer {
 }
 
 .footer-section h3 {
-    color: var(--secondary-color); /* Ativar e personalizar (títulos no rodapé) */
+    color: var(--secondary-color);
     margin-bottom: 20px;
     font-size: 1.4rem;
 }
@@ -440,22 +472,22 @@ footer {
 }
 
 .footer-section ul li a {
-    color: var(--cor-rodape-texto); /* Ativar e personalizar (links no rodapé) */
+    color: var(--cor-rodape-texto);
     font-size: 0.9rem;
 }
 
 .footer-section ul li a:hover {
-    color: var(--secondary-color); /* Ativar e personalizar */
+    color: var(--secondary-color);
 }
 
 .footer-section.social a {
     font-size: 1.8rem;
     margin-right: 15px;
-    color: var(--cor-icones-sociais); /* Ativar e personalizar */
+    color: var(--cor-icones-sociais);
 }
 
 .footer-section.social a:hover {
-    color: var(--secondary-color); /* Ativar e personalizar */
+    color: var(--secondary-color);
 }
 
 .contact-info span {
@@ -466,16 +498,16 @@ footer {
 
 .contact-info i {
     margin-right: 10px;
-    color: var(--secondary-color); /* Ativar e personalizar (ícones de contato) */
+    color: var(--secondary-color);
 }
 
 .footer-bottom {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Manter borda ou personalizar */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.85rem;
     text-align: center;
-    color: var(--cor-rodape-texto); /* Ativar e personalizar */
+    color: var(--cor-rodape-texto);
 }
 
 /* --- Páginas Internas --- */
@@ -485,22 +517,22 @@ footer {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px;
-    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    background-color: var(--cor-fundo-geral);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Manter sombra ou personalizar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     text-align: left;
 }
 
 .info-page-content h1 {
     font-size: 2.8rem;
-    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    color: var(--cor-titulo-principal);
     text-align: center;
     margin-bottom: 30px;
 }
 
 .info-page-content h2 {
     font-size: 2rem;
-    color: var(--secondary-color); /* Ativar e personalizar */
+    color: var(--secondary-color);
     margin-top: 30px;
     margin-bottom: 15px;
 }
@@ -509,7 +541,7 @@ footer {
     margin-bottom: 15px;
     line-height: 1.7;
     font-size: 1.05rem;
-    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+    color: var(--cor-texto-padrao);
 }
 
 .info-page-content ul {
@@ -520,20 +552,20 @@ footer {
 
 .info-page-content ul li {
     margin-bottom: 8px;
-    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+    color: var(--cor-texto-padrao);
 }
 
 /* Página de Galeria */
 .gallery-section {
     padding: 80px 20px;
     text-align: center;
-    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    background-color: var(--cor-fundo-geral);
 }
 
 .gallery-section h1 {
     font-size: 3rem;
     margin-bottom: 50px;
-    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    color: var(--cor-titulo-principal);
 }
 
 .gallery-categories {
@@ -545,8 +577,8 @@ footer {
 }
 
 .gallery-categories button {
-    background-color: var(--cor-botao-primario-fundo); /* Ativar e personalizar */
-    color: var(--cor-botao-primario-texto); /* Ativar e personalizar */
+    background-color: var(--cor-botao-primario-fundo);
+    color: var(--cor-botao-primario-texto);
     border: none;
     padding: 10px 25px;
     border-radius: 5px;
@@ -556,12 +588,13 @@ footer {
 }
 
 .gallery-categories button:hover, .gallery-categories button.active {
-    background-color: var(--secondary-color); /* Ativar e personalizar */
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
 .gallery-full-grid {
     display: grid;
+    /* 3 colunas para a galeria completa também, para consistência */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     max-width: 1200px;
@@ -572,7 +605,7 @@ footer {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
@@ -594,8 +627,8 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--cor-galeria-overlay); /* Ativar e personalizar */
-    color: var(--white); /* Ativar e personalizar */
+    background-color: var(--cor-galeria-overlay);
+    color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -611,14 +644,14 @@ footer {
 }
 
 .gallery-item-overlay h3 {
-    color: var(--white); /* Ativar e personalizar */
+    color: var(--white);
     margin-bottom: 10px;
     font-size: 1.5rem;
 }
 
 .gallery-item-overlay p {
     font-size: 1rem;
-    color: var(--white); /* Ativar e personalizar */
+    color: var(--white);
 }
 
 /* Lightbox para Galeria - Adicionado para ampliação */
@@ -631,7 +664,7 @@ footer {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9); /* Manter ou personalizar */
+    background-color: rgba(0, 0, 0, 0.9);
     align-items: center;
     justify-content: center;
     opacity: 0;
@@ -651,7 +684,7 @@ footer {
 }
 
 .close-btn {
-    color: var(--white); /* Ativar e personalizar */
+    color: var(--white);
     position: absolute;
     top: 15px;
     right: 35px;
@@ -664,7 +697,7 @@ footer {
 
 .close-btn:hover,
 .close-btn:focus {
-    color: var(--secondary-color); /* Ativar e personalizar */
+    color: var(--secondary-color);
     text-decoration: none;
     cursor: pointer;
 }
@@ -676,14 +709,14 @@ footer {
     width: auto;
     padding: 16px;
     margin-top: -50px;
-    color: var(--white); /* Ativar e personalizar */
+    color: var(--white);
     font-weight: bold;
     font-size: 25px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
-    background-color: rgba(0, 0, 0, 0.5); /* Manter ou personalizar */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .next-btn {
@@ -697,7 +730,7 @@ footer {
 }
 
 .prev-btn:hover, .next-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Manter ou personalizar */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Página de Serviços */
@@ -708,16 +741,16 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
-    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    background-color: var(--cor-fundo-geral);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Manter sombra ou personalizar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .servico-completo-item {
-    background-color: var(--cor-servico-item-fundo); /* Ativar e personalizar */
+    background-color: var(--cor-servico-item-fundo);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -734,27 +767,27 @@ footer {
 
 .servico-completo-item h3 {
     font-size: 1.8rem;
-    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    color: var(--cor-titulo-principal);
     margin-bottom: 15px;
 }
 
 .servico-completo-item p {
     font-size: 1rem;
-    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+    color: var(--cor-texto-padrao);
     margin-bottom: 15px;
     flex-grow: 1;
 }
 
 .servico-completo-item .btn-primary {
     align-self: flex-start;
-    background-color: var(--cor-botao-primario-fundo); /* Ativar e personalizar */
-    color: var(--cor-botao-primario-texto); /* Ativar e personalizar */
+    background-color: var(--cor-botao-primario-fundo);
+    color: var(--cor-botao-primario-texto);
     border: none;
     margin-top: auto;
 }
 
 .servico-completo-item .btn-primary:hover {
-    background-color: var(--secondary-color); /* Ativar e personalizar */
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
@@ -763,9 +796,9 @@ footer {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px;
-    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    background-color: var(--cor-fundo-geral);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Manter sombra ou personalizar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 
@@ -779,7 +812,7 @@ footer {
 .contact-form-section .contact-info i {
     font-size: 1.5rem;
     margin-right: 10px;
-    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    color: var(--cor-titulo-principal);
 }
 
 .contact-form-section form {
@@ -796,7 +829,7 @@ footer {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+    color: var(--cor-texto-padrao);
 }
 
 .contact-form-section .form-group input[type="text"],
@@ -804,12 +837,12 @@ footer {
 .contact-form-section .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid var(--gray-light); /* Manter borda ou personalizar */
+    border: 1px solid var(--gray-light);
     border-radius: 5px;
     font-size: 1rem;
     box-sizing: border-box;
-    /* background-color: var(--white); */ /* Ativar e personalizar */
-    /* color: var(--text-color); */ /* Ativar e personalizar */
+    /* background-color: var(--white); */ /* Se quiser um fundo diferente */
+    /* color: var(--text-color); */ /* Se quiser uma cor de texto diferente no input */
 }
 
 .contact-form-section .form-group textarea {
@@ -823,8 +856,8 @@ footer {
 
 .contact-form-section button[type="submit"] {
     grid-column: 1 / -1;
-    background-color: var(--cor-botao-primario-fundo); /* Ativar e personalizar */
-    color: var(--cor-botao-primario-texto); /* Ativar e personalizar */
+    background-color: var(--cor-botao-primario-fundo);
+    color: var(--cor-botao-primario-texto);
     border: none;
     padding: 15px 30px;
     border-radius: 5px;
@@ -836,7 +869,7 @@ footer {
 }
 
 .contact-form-section button[type="submit"]:hover {
-    background-color: var(--secondary-color); /* Ativar e personalizar */
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
@@ -849,7 +882,7 @@ footer {
 .instagram-feed p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+    color: var(--cor-texto-padrao);
 }
 
 .instagram-posts-grid {
@@ -861,16 +894,16 @@ footer {
 }
 
 .instagram-post-item {
-    background-color: var(--cor-servico-item-fundo); /* Ativar e personalizar */
+    background-color: var(--cor-servico-item-fundo);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .instagram-post-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Manter sombra ou personalizar */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .instagram-post-item img {
@@ -884,12 +917,12 @@ footer {
     padding: 15px;
     text-align: left;
     font-size: 0.95rem;
-    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+    color: var(--cor-texto-padrao);
 }
 
 .instagram-post-item .post-date {
     font-size: 0.85rem;
-    color: var(--gray-dark); /* Ativar e personalizar */
+    color: var(--gray-dark);
     margin-top: 5px;
 }
 
@@ -907,7 +940,7 @@ footer {
         right: 0px;
         height: calc(100vh - 80px);
         top: 80px;
-        background-color: var(--cor-cabecalho-fundo); /* Ativar e personalizar */
+        background-color: var(--cor-cabecalho-fundo);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -988,7 +1021,7 @@ footer {
     }
 
     .servicos-grid, .gallery-full-grid, .instagram-posts-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
     }
 
     .depoimento-carrossel {
@@ -1059,8 +1092,10 @@ footer {
         height: 250px;
     }
 
-    .btn-primary, .btn-secondary {
+    .btn-primary, .btn-secondary, .btn-whatsapp {
         padding: 10px 20px;
         font-size: 0.9rem;
+        margin-left: 5px; /* Ajuste para botões próximos em telas pequenas */
+        margin-right: 5px;
     }
 }
