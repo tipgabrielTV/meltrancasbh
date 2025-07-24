@@ -166,7 +166,7 @@ nav {
 
 /* Hero Section */
 .hero-section {
-    background-color: #212121 no-repeat center center/cover; /* Substitua pela imagem do header */
+    background: url"(trancas/background.jpg)" no-repeat center center/cover; /* Substitua pela imagem do header */
     color: #var(--white);
     text-align: center;
     padding: 150px 20px;
