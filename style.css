@@ -1,773 +1,1066 @@
-Ok, vamos organizar as imagens em grade, remover todas as cores do site e deixar o código preparado para que você possa personalizar cada cor separadamente.
-
-1. Organização das Imagens em Grade:
-
-As seções "Nossos Serviços em Destaque" e "Alguns de Nossos Últimos Trabalhos" já estão utilizando display: grid no seu CSS, o que as organiza em grade. Se você quiser ajustar o número de colunas ou o espaçamento entre as imagens, você pode modificar as propriedades grid-template-columns e gap nos seletores .servicos-grid e .gallery-grid (ou .gallery-full-grid se estiver se referindo à galeria completa).
-
-2. Remoção de Todas as Cores no Site (com possibilidade de personalização):
-
-Vou fornecer uma versão modificada do seu style.css com todas as propriedades relacionadas a cores comentadas. Isso fará com que o site apareça com as cores padrão do navegador (geralmente texto preto sobre fundo branco) ou com a ausência de cor onde havia um fundo ou borda colorida. Você poderá então descomentar as linhas e alterar os valores para personalizar as cores de cada elemento separadamente.
-
-Arquivo style.css Modificado:
-
-(Copie e substitua o conteúdo do seu arquivo style.css por este código)
-
 /* Importação de Fontes (Exemplo: Google Fonts) */
+/* Lembre-se: 'Arial Nova' não é uma Google Font. Se você quer essa fonte, ela precisa estar instalada no sistema do usuário ou ser fornecida por um serviço de fontes específico. Caso contrário, o navegador usará uma fonte sans-serif padrão. */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Roboto:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arial+Nova:wght@400;700&display=swap');
 
 :root {
---primary-color: #8A2BE2; /* Um tom de roxo/lilás, pode ser ajustado /
---secondary-color: #FF69B4; / Rosa choque /
---text-color: #333;
---light-bg: #f8f8f8;
---dark-bg: #212121;
---white: #fff;
---gray-light: #e0e0e0;
---gray-dark: #666;
---whatsapp-green: #25D366; / Nova cor para o botão do WhatsApp */
+    /* Variáveis de Cor - Personalize aqui */
+    --primary-color: #8A2BE2; /* Roxo/Lilás */
+    --secondary-color: #FF69B4; /* Rosa choque */
+    --text-color: #333; /* Cor padrão para a maioria dos textos */
+    --light-bg: #f8f8f8; /* Fundo claro para seções */
+    --dark-bg: #212121; /* Fundo escuro para cabeçalho/rodapé */
+    --white: #fff; /* Branco */
+    --gray-light: #e0e0e0; /* Cinza claro para bordas/sombras */
+    --gray-dark: #666; /* Cinza escuro para textos secundários */
+    --whatsapp-green: #25D366; /* Verde do WhatsApp */
+
+    /* Exemplos de cores para você ativar/mudar */
+    --cor-fundo-geral: #f0f0f0; /* Fundo de todo o body */
+    --cor-texto-padrao: #333333; /* Texto de parágrafos */
+    --cor-cabecalho-fundo: #222222; /* Fundo do header */
+    --cor-cabecalho-texto: #ffffff; /* Texto do header (logo, links) */
+    --cor-titulo-principal: #6a0dad; /* Títulos h1, h2, h3 */
+    --cor-subtitulo-hero: #cccccc; /* Subtítulo na seção hero */
+    --cor-botao-primario-fundo: #7b24d9; /* Fundo do btn-primary */
+    --cor-botao-primario-texto: #ffffff; /* Texto do btn-primary */
+    --cor-botao-secundario-borda: #7b24d9; /* Borda do btn-secondary */
+    --cor-botao-secundario-texto: #7b24d9; /* Texto do btn-secondary */
+    --cor-servico-item-fundo: #fefefe; /* Fundo dos cards de serviço */
+    --cor-galeria-overlay: rgba(123, 36, 217, 0.7); /* Overlay da galeria (roxo com transparência) */
+    --cor-depoimentos-fundo: #ff88d0; /* Fundo da seção de depoimentos */
+    --cor-depoimentos-texto: #333333; /* Texto dos cards de depoimento */
+    --cor-rodape-fundo: #1a1a1a; /* Fundo do footer */
+    --cor-rodape-texto: #eeeeee; /* Texto do footer */
+    --cor-icones-sociais: #ffffff; /* Ícones sociais */
 }
 
-/* Base e Tipografia /
+/* Base e Tipografia */
 body {
-font-family: 'Roboto', sans-serif; / Roboto para todo o texto /
-margin: 0;
-padding: 0;
-line-height: 1.6;
-/ color: var(--text-color); / / Cor do texto /
-/ background-color: var(--light-bg); / / Cor de fundo do corpo /
-overflow-x: hidden; / Evita scroll horizontal em alguns casos */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-font-family: 'Fira Sans', sans-serif; /* Fira Sans para títulos /
-/ color: var(--primary-color); / / Cor dos títulos */
-margin-bottom: 1rem;
+    font-family: 'Fira Sans', sans-serif;
+    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    margin-bottom: 1rem;
 }
 
-/* Subtítulos específicos, como o 'p' na hero-section, podem ser Arial Nova /
 .hero-content p {
-font-family: 'Arial Nova', sans-serif; / Arial Nova para subtítulo do hero /
-font-size: 1.3rem;
-margin-bottom: 30px;
-/ color: var(--white); / / Cor do subtítulo do hero */
+    font-family: 'Arial Nova', sans-serif; /* Se Arial Nova não carregar, ele usará a próxima fonte disponível */
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: var(--cor-subtitulo-hero); /* Ativar e personalizar */
 }
 
 a {
-text-decoration: none;
-/* color: var(--primary-color); / / Cor dos links */
-transition: color 0.3s ease;
+    text-decoration: none;
+    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    transition: color 0.3s ease;
 }
 
 a:hover {
-/* color: var(--secondary-color); / / Cor dos links ao passar o mouse */
+    color: var(--secondary-color); /* Você pode usar secondary-color ou outra variável */
 }
 
 .container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Botões */
 .btn-primary, .btn-secondary {
-display: inline-block;
-padding: 12px 25px;
-border-radius: 5px;
-font-weight: 600;
-text-align: center;
-transition: background-color 0.3s ease, transform 0.2s ease;
-cursor: pointer;
-margin-top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    margin-top: 15px;
 }
 
 .btn-primary {
-/* background-color: var(--primary-color); / / Cor de fundo do botão primário /
-/ color: var(--white); / / Cor do texto do botão primário */
-border: none;
+    background-color: var(--cor-botao-primario-fundo); /* Ativar e personalizar */
+    color: var(--cor-botao-primario-texto); /* Ativar e personalizar */
+    border: none;
 }
 
 .btn-primary:hover {
-/* background-color: var(--secondary-color); / / Cor de fundo do botão primário ao passar o mouse */
-transform: translateY(-2px);
+    background-color: var(--secondary-color); /* Pode usar secondary-color para o hover ou definir nova variável */
+    transform: translateY(-2px);
 }
 
-/* Novo estilo para o botão do WhatsApp /
 .btn-whatsapp {
-/ background-color: var(--whatsapp-green); / / Cor verde do WhatsApp /
-/ color: var(--white); / / Cor do texto do botão do WhatsApp */
+    background-color: var(--whatsapp-green); /* Ativar e personalizar */
+    color: var(--white); /* Ativar e personalizar */
 }
 
 .btn-whatsapp:hover {
-/* background-color: #20b05b; / / Um verde um pouco mais escuro ao passar o mouse */
-transform: translateY(-2px);
+    background-color: #20b05b; /* Um verde um pouco mais escuro ao passar o mouse */
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
-/* background-color: transparent; / / Cor de fundo do botão secundário /
-/ color: var(--primary-color); / / Cor do texto do botão secundário /
-border: 2px solid transparent; / Cor da borda do botão secundário */
+    background-color: transparent;
+    color: var(--cor-botao-secundario-texto); /* Ativar e personalizar */
+    border: 2px solid var(--cor-botao-secundario-borda); /* Ativar e personalizar */
 }
 
 .btn-secondary:hover {
-/* background-color: var(--primary-color); / / Cor de fundo do botão secundário ao passar o mouse /
-/ color: var(--white); / / Cor do texto do botão secundário ao passar o mouse */
-transform: translateY(-2px);
+    background-color: var(--cor-botao-secundario-borda); /* Ativar e personalizar */
+    color: var(--white); /* Ativar e personalizar */
+    transform: translateY(-2px);
 }
 
-/* Header e Navegação /
+/* Header e Navegação */
 header {
-/ background-color: var(--dark-bg); / / Cor de fundo do cabeçalho /
-/ color: var(--white); / / Cor do texto no cabeçalho /
-padding: 15px 0;
-/ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); / / Sombra do cabeçalho */
-position: sticky;
-top: 0;
-z-index: 1000;
+    background-color: var(--cor-cabecalho-fundo); /* Ativar e personalizar */
+    color: var(--cor-cabecalho-texto); /* Ativar e personalizar */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .logo {
-font-family: 'Fira Sans', sans-serif; /* Usando a nova fonte para o logo */
-font-size: 1.8rem;
-font-weight: 700;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .logo a {
-/* color: var(--white); / / Cor do texto do logo */
-text-decoration: none;
+    color: var(--cor-cabecalho-texto); /* Ativar e personalizar */
+    text-decoration: none;
 }
 
 .nav-links {
-display: flex;
-list-style: none;
-margin: 0;
-padding: 0;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
-margin-left: 30px;
+    margin-left: 30px;
 }
 
 .nav-links a {
-/* color: var(--white); / / Cor dos links de navegação /
-font-weight: 600;
-padding: 5px 0;
-position: relative;
-font-family: 'Roboto', sans-serif; / Links de navegação com Roboto */
+    color: var(--cor-cabecalho-texto); /* Ativar e personalizar */
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav-links a::after {
-content: '';
-position: absolute;
-width: 0%;
-height: 2px;
-display: block;
-margin-top: 5px;
-right: 0;
-/* background: var(--secondary-color); / / Cor da linha inferior ao passar o mouse nos links de navegação */
-transition: width 0.4s ease;
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--secondary-color); /* Ativar e personalizar */
+    transition: width 0.4s ease;
 }
 
 .nav-links a:hover::after {
-width: 100%;
-left: 0;
-/* background: var(--secondary-color); / / Cor da linha inferior ao passar o mouse nos links de navegação */
+    width: 100%;
+    left: 0;
+    background: var(--secondary-color); /* Ativar e personalizar */
 }
 
 .burger {
-display: none;
-cursor: pointer;
-flex-direction: column;
-justify-content: space-around;
-width: 30px;
-height: 25px;
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
 }
 
 .burger div {
-width: 100%;
-height: 3px;
-/* background-color: var(--white); / / Cor das linhas do menu hambúrguer */
-border-radius: 5px;
-transition: all 0.3s ease;
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor-cabecalho-texto); /* Ativar e personalizar */
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
-/* Hero Section /
+/* Hero Section */
 .hero-section {
-background: url('close-de-uma-mulher-de-biquini_1048944-22595275.jpg') no-repeat center center/cover; / Substitua pela imagem do header /
-/ color: var(--white); / / Cor do texto principal da seção hero */
-text-align: center;
-padding: 150px 20px;
-display: flex;
-align-items: center;
-justify-content: center;
-min-height: 600px;
-position: relative;
-z-index: 1;
+    background: url('close-de-uma-mulher-de-biquini_1048944-22595275.jpg') no-repeat center center/cover;
+    color: var(--cor-cabecalho-texto); /* Ativar e personalizar (texto geral na hero) */
+    text-align: center;
+    padding: 150px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-section::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-/* background-color: rgba(0, 0, 0, 0.4); / / Overlay escuro */
-z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay escuro (manter ou personalizar) */
+    z-index: -1;
 }
 
 .hero-content {
-max-width: 800px;
+    max-width: 800px;
 }
 
 .hero-content h1 {
-font-size: 3.5rem;
-margin-bottom: 20px;
-line-height: 1.2;
-/* color: var(--white); / / Cor do título H1 da hero section */
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: var(--cor-cabecalho-texto); /* Ativar e personalizar (título H1 na hero) */
 }
 
-/* Destaques de Serviços /
+/* Destaques de Serviços */
 .destaques-servicos, .galeria-preview, .depoimentos, .contact-form-section, .info-page-content, .instagram-feed {
-padding: 80px 20px;
-text-align: center;
-/ background-color: var(--white); / / Cor de fundo das seções /
-margin-bottom: 20px;
-border-radius: 10px;
-/ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); / / Sombra das seções */
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Manter sombra ou personalizar */
 }
 
 .destaques-servicos h2, .galeria-preview h2, .depoimentos h2, .contact-form-section h2, .info-page-content h2, .instagram-feed h2 {
-font-size: 2.5rem;
-margin-bottom: 50px;
-/* color: var(--primary-color); / / Cor dos títulos H2 das seções */
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--cor-titulo-principal); /* Ativar e personalizar */
 }
 
 .servicos-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 30px;
-max-width: 1000px;
-margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .servico-item {
-/* background-color: var(--light-bg); / / Cor de fundo dos itens de serviço /
-padding: 20px;
-border-radius: 8px;
-/ box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); / / Sombra dos itens de serviço */
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-text-align: center;
+    background-color: var(--cor-servico-item-fundo); /* Ativar e personalizar */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .servico-item:hover {
-transform: translateY(-8px);
-/* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); / / Sombra dos itens de serviço ao passar o mouse */
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Manter sombra ou personalizar */
 }
 
 .servico-item img {
-width: 100%;
-height: 200px;
-object-fit: cover;
-border-radius: 5px;
-margin-bottom: 15px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .servico-item h3 {
-font-size: 1.5rem;
-/* color: var(--primary-color); / / Cor dos títulos H3 dos itens de serviço */
-margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    margin-bottom: 10px;
 }
 
 .servico-item p {
-font-size: 0.95rem;
-/* color: var(--gray-dark); / / Cor do texto dos itens de serviço */
+    font-size: 0.95rem;
+    color: var(--cor-texto-padrao); /* Ativar e personalizar */
 }
 
-/* Galeria Preview /
-/ Ajustes para o novo comportamento da galeria */
+/* Galeria Preview */
 .gallery-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 15px;
-max-width: 1200px;
-margin: 0 auto 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
 }
 
 .gallery-item {
-position: relative;
-overflow: hidden;
-border-radius: 8px;
-/* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); / / Sombra dos itens da galeria */
-cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    cursor: pointer;
 }
 
 .gallery-item img {
-width: 100%;
-height: 250px;
-object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-display: block;
-transition: transform 0.3s ease;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img {
-transform: scale(1.05); /* Leve zoom ao passar o mouse */
+    transform: scale(1.05);
 }
 
 .gallery-item-overlay {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-/* background-color: rgba(138, 43, 226, 0.6); / / Cor primary com transparência /
-/ color: var(--white); / / Cor do ícone de lupa /
-display: flex;
-justify-content: center;
-align-items: center;
-opacity: 0;
-transition: opacity 0.3s ease;
-font-size: 3rem; / Tamanho do ícone de lupa */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-galeria-overlay); /* Ativar e personalizar */
+    color: var(--white); /* Ativar e personalizar (cor do ícone) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 3rem;
 }
 
 .gallery-item:hover .gallery-item-overlay {
-opacity: 1;
+    opacity: 1;
 }
 
-/* Depoimentos /
+/* Depoimentos */
 .depoimentos {
-/ background-color: var(--secondary-color); / / Cor de fundo da seção de depoimentos /
-/ color: var(--white); / / Cor do texto da seção de depoimentos */
-padding: 60px 20px;
-border-radius: 10px;
+    background-color: var(--cor-depoimentos-fundo); /* Ativar e personalizar */
+    color: var(--cor-depoimentos-texto); /* Ativar e personalizar */
+    padding: 60px 20px;
+    border-radius: 10px;
 }
 
 .depoimentos h2 {
-/* color: var(--white); / / Cor do título H2 da seção de depoimentos */
+    color: var(--white); /* Ativar e personalizar (título na seção de depoimentos) */
 }
 
 .depoimento-carrossel {
-display: flex;
-overflow-x: auto; /* Permite rolagem horizontal /
-scroll-snap-type: x mandatory; / Para rolagem suave entre os itens /
--webkit-overflow-scrolling: touch; / Melhora a rolagem em iOS /
-gap: 20px;
-padding-bottom: 20px; / Espaço para a barra de rolagem /
-justify-content: center; / Centraliza os itens quando houver poucos */
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
 }
 
 .depoimento-item {
-flex: 0 0 350px; /* Largura fixa para cada depoimento /
-/ background-color: rgba(255, 255, 255, 0.9); / / Cor de fundo dos itens de depoimento /
-/ color: var(--text-color); / / Cor do texto dos itens de depoimento /
-padding: 30px;
-border-radius: 10px;
-/ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); / / Sombra dos itens de depoimento /
-text-align: center;
-scroll-snap-align: start; / Alinha o item ao início ao rolar /
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-min-height: 180px; / Altura mínima para depoimentos */
+    flex: 0 0 350px;
+    background-color: rgba(255, 255, 255, 0.9); /* Ativar e personalizar */
+    color: var(--cor-depoimentos-texto); /* Ativar e personalizar */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    text-align: center;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
 }
 
 .depoimento-item p {
-font-style: italic;
-margin-bottom: 15px;
-font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
 }
 
 .depoimento-item span {
-font-weight: 600;
-/* color: var(--primary-color); / / Cor do nome do cliente no depoimento */
+    font-weight: 600;
+    color: var(--cor-titulo-principal); /* Ativar e personalizar (nome no depoimento) */
 }
 
-/* Footer /
+/* Footer */
 footer {
-/ background-color: var(--dark-bg); / / Cor de fundo do rodapé /
-/ color: var(--white); / / Cor do texto do rodapé */
-padding: 50px 20px;
-text-align: center;
+    background-color: var(--cor-rodape-fundo); /* Ativar e personalizar */
+    color: var(--cor-rodape-texto); /* Ativar e personalizar */
+    padding: 50px 20px;
+    text-align: center;
 }
 
 .footer-content {
-display: flex;
-justify-content: space-around;
-flex-wrap: wrap;
-max-width: 1200px;
-margin: 0 auto;
-gap: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
 }
 
 .footer-section {
-flex: 1;
-min-width: 250px;
-margin-bottom: 20px;
-text-align: left;
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .footer-section h3 {
-/* color: var(--secondary-color); / / Cor dos títulos H3 do rodapé */
-margin-bottom: 20px;
-font-size: 1.4rem;
+    color: var(--secondary-color); /* Ativar e personalizar (títulos no rodapé) */
+    margin-bottom: 20px;
+    font-size: 1.4rem;
 }
 
 .footer-section p {
-font-size: 0.9rem;
-line-height: 1.8;
+    font-size: 0.9rem;
+    line-height: 1.8;
 }
 
 .footer-section ul {
-list-style: none;
-padding: 0;
-margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-section ul li {
-margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .footer-section ul li a {
-/* color: var(--white); / / Cor dos links do rodapé */
-font-size: 0.9rem;
+    color: var(--cor-rodape-texto); /* Ativar e personalizar (links no rodapé) */
+    font-size: 0.9rem;
 }
 
 .footer-section ul li a:hover {
-/* color: var(--secondary-color); / / Cor dos links do rodapé ao passar o mouse */
+    color: var(--secondary-color); /* Ativar e personalizar */
 }
 
 .footer-section.social a {
-font-size: 1.8rem;
-margin-right: 15px;
-/* color: var(--white); / / Cor dos ícones sociais do rodapé */
+    font-size: 1.8rem;
+    margin-right: 15px;
+    color: var(--cor-icones-sociais); /* Ativar e personalizar */
 }
 
 .footer-section.social a:hover {
-/* color: var(--secondary-color); / / Cor dos ícones sociais do rodapé ao passar o mouse */
+    color: var(--secondary-color); /* Ativar e personalizar */
 }
 
 .contact-info span {
-display: block;
-margin-bottom: 10px;
-font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
 }
 
 .contact-info i {
-margin-right: 10px;
-/* color: var(--secondary-color); / / Cor dos ícones de contato do rodapé */
+    margin-right: 10px;
+    color: var(--secondary-color); /* Ativar e personalizar (ícones de contato) */
 }
 
 .footer-bottom {
-margin-top: 40px;
-padding-top: 20px;
-border-top: 1px solid rgba(255, 255, 255, 0.1);
-font-size: 0.85rem;
-text-align: center;
-/* color: var(--white); / / Cor do texto da parte inferior do rodapé */
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Manter borda ou personalizar */
+    font-size: 0.85rem;
+    text-align: center;
+    color: var(--cor-rodape-texto); /* Ativar e personalizar */
 }
 
 /* --- Páginas Internas --- */
 
-/* Páginas de Conteúdo Geral (Sobre Nós, Termos, Privacidade) /
+/* Páginas de Conteúdo Geral (Sobre Nós, Termos, Privacidade) */
 .info-page-content {
-max-width: 900px;
-margin: 40px auto;
-padding: 40px;
-/ background-color: var(--white); / / Cor de fundo das páginas de conteúdo /
-border-radius: 10px;
-/ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); / / Sombra das páginas de conteúdo */
-text-align: left;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Manter sombra ou personalizar */
+    text-align: left;
 }
 
 .info-page-content h1 {
-font-size: 2.8rem;
-/* color: var(--primary-color); / / Cor do título H1 das páginas de conteúdo */
-text-align: center;
-margin-bottom: 30px;
+    font-size: 2.8rem;
+    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .info-page-content h2 {
-font-size: 2rem;
-/* color: var(--secondary-color); / / Cor dos títulos H2 das páginas de conteúdo */
-margin-top: 30px;
-margin-bottom: 15px;
+    font-size: 2rem;
+    color: var(--secondary-color); /* Ativar e personalizar */
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 .info-page-content p {
-margin-bottom: 15px;
-line-height: 1.7;
-font-size: 1.05rem;
-/* color: var(--text-color); / / Cor do texto das páginas de conteúdo */
+    margin-bottom: 15px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: var(--cor-texto-padrao); /* Ativar e personalizar */
 }
 
 .info-page-content ul {
-list-style: disc;
-margin-left: 25px;
-margin-bottom: 15px;
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 15px;
 }
 
 .info-page-content ul li {
-margin-bottom: 8px;
-/* color: var(--text-color); / / Cor das listas das páginas de conteúdo */
+    margin-bottom: 8px;
+    color: var(--cor-texto-padrao); /* Ativar e personalizar */
 }
 
-/* Página de Galeria /
+/* Página de Galeria */
 .gallery-section {
-padding: 80px 20px;
-text-align: center;
-/ background-color: var(--light-bg); / / Cor de fundo da página de galeria */
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
 }
 
 .gallery-section h1 {
-font-size: 3rem;
-margin-bottom: 50px;
-/* color: var(--primary-color); / / Cor do título H1 da página de galeria */
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: var(--cor-titulo-principal); /* Ativar e personalizar */
 }
 
 .gallery-categories {
-margin-bottom: 40px;
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 15px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .gallery-categories button {
-/* background-color: var(--primary-color); / / Cor de fundo dos botões de categoria da galeria /
-/ color: var(--white); / / Cor do texto dos botões de categoria da galeria */
-border: none;
-padding: 10px 25px;
-border-radius: 5px;
-font-size: 1.1rem;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: var(--cor-botao-primario-fundo); /* Ativar e personalizar */
+    color: var(--cor-botao-primario-texto); /* Ativar e personalizar */
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .gallery-categories button:hover, .gallery-categories button.active {
-/* background-color: var(--secondary-color); / / Cor de fundo dos botões de categoria da galeria ao passar o mouse/ativo */
-transform: translateY(-2px);
+    background-color: var(--secondary-color); /* Ativar e personalizar */
+    transform: translateY(-2px);
 }
 
 .gallery-full-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 20px;
-max-width: 1200px;
-margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .gallery-full-grid .gallery-item {
-position: relative;
-overflow: hidden;
-border-radius: 10px;
-/* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); / / Sombra dos itens da galeria completa */
-cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    cursor: pointer;
 }
 
 .gallery-full-grid .gallery-item img {
-width: 100%;
-height: 300px;
-object-fit: cover;
-display: block;
-transition: transform 0.4s ease;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
 .gallery-full-grid .gallery-item:hover img {
-transform: scale(1.08);
+    transform: scale(1.08);
 }
 
 .gallery-item-overlay {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-/* background-color: rgba(138, 43, 226, 0.7); / / Cor primary com transparência /
-/ color: var(--white); / / Cor do texto/ícone do overlay da galeria completa */
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-opacity: 0;
-transition: opacity 0.4s ease;
-padding: 20px;
-text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-galeria-overlay); /* Ativar e personalizar */
+    color: var(--white); /* Ativar e personalizar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 20px;
+    text-align: center;
 }
 
 .gallery-full-grid .gallery-item:hover .gallery-item-overlay {
-opacity: 1;
+    opacity: 1;
 }
 
 .gallery-item-overlay h3 {
-/* color: var(--white); / / Cor do título H3 do overlay da galeria completa */
-margin-bottom: 10px;
-font-size: 1.5rem;
+    color: var(--white); /* Ativar e personalizar */
+    margin-bottom: 10px;
+    font-size: 1.5rem;
 }
 
 .gallery-item-overlay p {
-font-size: 1rem;
-/* color: var(--white); / / Cor do parágrafo do overlay da galeria completa */
+    font-size: 1rem;
+    color: var(--white); /* Ativar e personalizar */
 }
 
-/* Lightbox para Galeria - Adicionado para ampliação /
+/* Lightbox para Galeria - Adicionado para ampliação */
 .lightbox {
-display: none; / Escondido por padrão /
-position: fixed;
-z-index: 10000;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-overflow: auto;
-/ background-color: rgba(0, 0, 0, 0.9); / / Cor de fundo do lightbox /
-align-items: center; / Centraliza verticalmente /
-justify-content: center; / Centraliza horizontalmente /
-opacity: 0; / Começa invisível para transição */
-transition: opacity 0.3s ease;
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Manter ou personalizar */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .lightbox.active {
-display: flex; /* Mostra o lightbox /
-opacity: 1; / Torna visível */
+    display: flex;
+    opacity: 1;
 }
 
 .lightbox-content {
-max-width: 90%; /* Largura máxima /
-max-height: 90vh; / Altura máxima da viewport /
-display: block; / Para a imagem se comportar corretamente /
-object-fit: contain; / Garante que a imagem inteira seja visível e não seja cortada */
+    max-width: 90%;
+    max-height: 90vh;
+    display: block;
+    object-fit: contain;
 }
 
 .close-btn {
-/* color: var(--white); / / Cor do botão de fechar do lightbox */
-position: absolute;
-top: 15px;
-right: 35px;
-font-size: 40px;
-font-weight: bold;
-transition: 0.3s;
-cursor: pointer;
-z-index: 10001;
+    color: var(--white); /* Ativar e personalizar */
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 10001;
 }
 
 .close-btn:hover,
 .close-btn:focus {
-/* color: var(--secondary-color); / / Cor do botão de fechar do lightbox ao passar o mouse/foco */
-text-decoration: none;
-cursor: pointer;
+    color: var(--secondary-color); /* Ativar e personalizar */
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .prev-btn, .next-btn {
-cursor: pointer;
-position: absolute;
-top: 50%;
-width: auto;
-padding: 16px;
-margin-top: -50px; /* Ajusta a posição vertical /
-/ color: var(--white); / / Cor dos botões de navegação do lightbox /
-font-weight: bold;
-font-size: 25px; / Ícones de navegação maiores /
-transition: 0.6s ease;
-border-radius: 0 3px 3px 0;
-user-select: none;
--webkit-user-select: none;
-/ background-color: rgba(0, 0, 0, 0.5); / / Fundo sutil para os botões */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: var(--white); /* Ativar e personalizar */
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Manter ou personalizar */
 }
 
 .next-btn {
-right: 0;
-border-radius: 3px 0 0 3px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 .prev-btn {
-left: 0;
-border-radius: 0 3px 3px 0;
+    left: 0;
+    border-radius: 0 3px 3px 0;
 }
 
 .prev-btn:hover, .next-btn:hover {
-/* background-color: rgba(0, 0, 0, 0.8); / / Fundo sutil para os botões ao passar o mouse */
+    background-color: rgba(0, 0, 0, 0.8); /* Manter ou personalizar */
 }
 
-/* Página de Serviços /
+/* Página de Serviços */
 .servicos-page-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 40px;
-max-width: 1200px;
-margin: 0 auto;
-padding: 40px 20px;
-/ background-color: var(--white); / / Cor de fundo da página de serviços /
-border-radius: 10px;
-/ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); / / Sombra da página de serviços */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Manter sombra ou personalizar */
 }
 
 .servico-completo-item {
-/* background-color: var(--light-bg); / / Cor de fundo dos itens de serviço completo /
-padding: 30px;
-border-radius: 8px;
-/ box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); / / Sombra dos itens de serviço completo */
-text-align: center;
-display: flex;
-flex-direction: column;
-align-items: center;
+    background-color: var(--cor-servico-item-fundo); /* Ativar e personalizar */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .servico-completo-item img {
-width: 100%;
-height: 250px;
-object-fit: cover;
-border-radius: 5px;
-margin-bottom: 20px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .servico-completo-item h3 {
-font-size: 1.8rem;
-/* color: var(--primary-color); / / Cor dos títulos H3 dos itens de serviço completo */
-margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+    margin-bottom: 15px;
 }
 
 .servico-completo-item p {
-font-size: 1rem;
-/* color: var(--gray-dark); / / Cor do texto dos itens de serviço completo /
-margin-bottom: 15px;
-flex-grow: 1; / Faz o parágrafo ocupar o espaço restante */
+    font-size: 1rem;
+    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+    margin-bottom: 15px;
+    flex-grow: 1;
 }
 
 .servico-completo-item .btn-primary {
-align-self: flex-start; /* Alinha o botão à esquerda dentro do item /
-/ background-color: var(--primary-color); / / Cor de fundo do botão primário nos itens de serviço completo /
-/ color: var(--white); / / Cor do texto do botão primário nos itens de serviço completo /
-border: none;
-margin-top: auto; / Empurra o botão para baixo */
+    align-self: flex-start;
+    background-color: var(--cor-botao-primario-fundo); /* Ativar e personalizar */
+    color: var(--cor-botao-primario-texto); /* Ativar e personalizar */
+    border: none;
+    margin-top: auto;
 }
 
 .servico-completo-item .btn-primary:hover {
-/* background-color: var(--secondary-color); / / Cor de fundo do botão primário nos itens de serviço completo ao passar o mouse */
-transform: translateY(-2px);
+    background-color: var(--secondary-color); /* Ativar e personalizar */
+    transform: translateY(-2px);
 }
 
-/* Página de Contato e Formulário /
+/* Página de Contato e Formulário */
 .contact-form-section {
-max-width: 900px;
-margin: 40px auto;
-padding: 40px;
-/ background-color: var(--white); / / Cor de fundo da seção de contato /
-border-radius: 10px;
-/ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); / / Sombra da seção de contato */
-text-align: center;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: var(--cor-fundo-geral); /* Ativar e personalizar */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Manter sombra ou personalizar */
+    text-align: center;
 }
 
 .contact-form-section .contact-info {
-text-align: center;
-margin-bottom: 40px;
-font-size: 1.1rem;
-line-height:
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.contact-form-section .contact-info i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: var(--cor-titulo-principal); /* Ativar e personalizar */
+}
+
+.contact-form-section form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-form-section .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form-section .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+}
+
+.contact-form-section .form-group input[type="text"],
+.contact-form-section .form-group input[type="email"],
+.contact-form-section .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--gray-light); /* Manter borda ou personalizar */
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    /* background-color: var(--white); */ /* Ativar e personalizar */
+    /* color: var(--text-color); */ /* Ativar e personalizar */
+}
+
+.contact-form-section .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form-section .full-width {
+    grid-column: 1 / -1;
+}
+
+.contact-form-section button[type="submit"] {
+    grid-column: 1 / -1;
+    background-color: var(--cor-botao-primario-fundo); /* Ativar e personalizar */
+    color: var(--cor-botao-primario-texto); /* Ativar e personalizar */
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.contact-form-section button[type="submit"]:hover {
+    background-color: var(--secondary-color); /* Ativar e personalizar */
+    transform: translateY(-2px);
+}
+
+/* Página do Instagram (simulada) */
+.instagram-feed {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.instagram-feed p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+}
+
+.instagram-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.instagram-post-item {
+    background-color: var(--cor-servico-item-fundo); /* Ativar e personalizar */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Manter sombra ou personalizar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-post-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Manter sombra ou personalizar */
+}
+
+.instagram-post-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.instagram-post-item .post-caption {
+    padding: 15px;
+    text-align: left;
+    font-size: 0.95rem;
+    color: var(--cor-texto-padrao); /* Ativar e personalizar */
+}
+
+.instagram-post-item .post-date {
+    font-size: 0.85rem;
+    color: var(--gray-dark); /* Ativar e personalizar */
+    margin-top: 5px;
+}
+
+
+/* --- Responsividade --- */
+
+/* Hamburguer Menu para Tablets e Celulares */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: calc(100vh - 80px);
+        top: 80px;
+        background-color: var(--cor-cabecalho-fundo); /* Ativar e personalizar */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 50px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 25px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.3rem;
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover::after {
+        width: 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .line1.toggle {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .line2.toggle {
+        opacity: 0;
+    }
+    .line3.toggle {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* Animação dos links do menu hamburger */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* Dispositivos menores (Celulares) */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 100px 20px;
+        min-height: 450px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .destaques-servicos, .galeria-preview, .depoimentos, .contact-form-section, .info-page-content, .instagram-feed {
+        padding: 60px 20px;
+    }
+
+    .destaques-servicos h2, .galeria-preview h2, .depoimentos h2, .contact-form-section h2, .info-page-content h2, .instagram-feed h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .servicos-grid, .gallery-full-grid, .instagram-posts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .depoimento-carrossel {
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
+
+    .depoimento-item {
+        flex: 0 0 90%;
+        margin: 0 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-section {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-section ul {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-section.social {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-form-section form {
+        grid-template-columns: 1fr;
+    }
+
+    .servico-completo-item .btn-primary {
+        align-self: center;
+    }
+}
+
+/* Telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 350px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .servico-item img {
+        height: 180px;
+    }
+
+    .gallery-full-grid .gallery-item img, .instagram-post-item img {
+        height: 250px;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
