@@ -2,41 +2,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Roboto:wght@400;500&display=swap');
 
 :root {
-    /* Variáveis de Cor - Personalize aqui */
-    --primary-color: #8A2BE2; /* Roxo/Lilás */
-    --secondary-color: #FF69B4; /* Rosa choque */
-    --text-color: #333; /* Cor padrão para a maioria dos textos */
-    --light-bg: #f8f8f8; /* Fundo claro para seções */
-    --dark-bg: #212121; /* Fundo escuro para cabeçalho/rodapé */
-    --white: #fff; /* Branco */
-    --gray-light: #e0e0e0; /* Cinza claro para bordas/sombras */
-    --gray-dark: #666; /* Cinza escuro para textos secundários */
-    --whatsapp-green: #25D366; /* Verde do WhatsApp */
+    /* Variáveis de Cor - PERSONALIZAR AQUI */
+    /* Estas variáveis estão sem valores para que você possa defini-los um por um. */
+    /* Exemplo: --primary-color: #8A2BE2; */
 
-    /* Exemplos de cores para você ativar/mudar */
-    --cor-fundo-geral: #f0f0f0; /* Fundo de todo o body */
-    --cor-texto-padrao: #333333; /* Texto de parágrafos */
-    --cor-cabecalho-fundo: #222222; /* Fundo do header */
-    --cor-cabecalho-texto: #ffffff; /* Texto do header (logo, links) */
-    --cor-titulo-principal: #6a0dad; /* Títulos h1, h2, h3 */
-    --cor-subtitulo-hero: #cccccc; /* Subtítulo na seção hero */
-    --cor-botao-primario-fundo: #7b24d9; /* Fundo do btn-primary */
-    --cor-botao-primario-texto: #ffffff; /* Texto do btn-primary */
-    --cor-botao-secundario-borda: #7b24d9; /* Borda do btn-secondary */
-    --cor-botao-secundario-texto: #7b24d9; /* Texto do btn-secondary */
-    --cor-servico-item-fundo: #fefefe; /* Fundo dos cards de serviço */
-    --cor-galeria-overlay: rgba(123, 36, 217, 0.7); /* Overlay da galeria (roxo com transparência) */
-    --cor-depoimentos-fundo: #ff88d0; /* Fundo da seção de depoimentos */
-    --cor-depoimentos-texto: #333333; /* Texto dos cards de depoimento */
-    --cor-rodape-fundo: #1a1a1a; /* Fundo do footer */
-    --cor-rodape-texto: #eeeeee; /* Texto do footer */
-    --cor-icones-sociais: #ffffff; /* Ícones sociais */
+    --primary-color: ;
+    --secondary-color: ;
+    --text-color: ;
+    --light-bg: ;
+    --dark-bg: ;
+    --white: ;
+    --gray-light: ;
+    --gray-dark: ;
+    --whatsapp-green: ;
 
-    /* Novas variáveis para a seção de serviços em destaque */
+    --cor-fundo-geral: ;
+    --cor-texto-padrao: ;
+    --cor-cabecalho-fundo: ;
+    --cor-cabecalho-texto: ;
+    --cor-titulo-principal: ;
+    --cor-subtitulo-hero: ;
+    --cor-botao-primario-fundo: ;
+    --cor-botao-primario-texto: ;
+    --cor-botao-secundario-borda: ;
+    --cor-botao-secundario-texto: ;
+    --cor-servico-item-fundo: ;
+    --cor-galeria-overlay: ; /* Ex: rgba(0, 0, 0, 0.7) */
+    --cor-depoimentos-fundo: ;
+    --cor-depoimentos-texto: ;
+    --cor-rodape-fundo: ;
+    --cor-rodape-texto: ;
+    --cor-icones-sociais: ;
+
+    /* Variáveis de sombra - Manter ou personalizar */
     --servico-card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --servico-card-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    --servico-item-title-color: var(--primary-color); /* Cor do título do serviço */
-    --servico-item-text-color: var(--gray-dark); /* Cor do texto do serviço */
+    /* Cores de texto para o card de serviço - Vão usar as variáveis acima quando definidas */
+    --servico-item-title-color: var(--cor-titulo-principal);
+    --servico-item-text-color: var(--cor-texto-padrao);
 }
 
 /* Base e Tipografia */
@@ -45,14 +48,14 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: var(--cor-texto-padrao);
-    background-color: var(--cor-fundo-geral);
+    color: var(--cor-texto-padrao); /* Use a variável para personalizar */
+    background-color: var(--cor-fundo-geral); /* Use a variável para personalizar */
     overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Fira Sans', sans-serif;
-    color: var(--cor-titulo-principal);
+    color: var(--cor-titulo-principal); /* Use a variável para personalizar */
     margin-bottom: 1rem;
 }
 
@@ -60,17 +63,17 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Arial Nova', sans-serif; /* Se Arial Nova não carregar, ele usará a próxima fonte disponível */
     font-size: 1.3rem;
     margin-bottom: 30px;
-    color: var(--cor-subtitulo-hero);
+    color: var(--cor-subtitulo-hero); /* Use a variável para personalizar */
 }
 
 a {
     text-decoration: none;
-    color: var(--cor-titulo-principal);
+    color: var(--cor-titulo-principal); /* Use a variável para personalizar */
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Use a variável para personalizar */
 }
 
 .container {
@@ -92,44 +95,43 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: var(--cor-botao-primario-fundo);
-    color: var(--cor-botao-primario-texto);
+    background-color: var(--cor-botao-primario-fundo); /* Personalizar */
+    color: var(--cor-botao-primario-texto); /* Personalizar */
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Personalizar */
     transform: translateY(-2px);
 }
 
 .btn-whatsapp {
-    background-color: var(--whatsapp-green);
-    color: var(--white);
-    margin-left: 10px; /* Espaçamento entre botões */
+    background-color: var(--whatsapp-green); /* Personalizar */
+    color: var(--white); /* Personalizar */
+    margin-left: 10px;
 }
 
 .btn-whatsapp:hover {
-    background-color: #20b05b;
+    background-color: ; /* Personalizar */
     transform: translateY(-2px);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--cor-botao-secundario-texto);
-    border: 2px solid var(--cor-botao-secundario-borda);
-    margin-left: 10px; /* Espaçamento entre botões */
+    color: var(--cor-botao-secundario-texto); /* Personalizar */
+    border: 2px solid var(--cor-botao-secundario-borda); /* Personalizar */
 }
 
 .btn-secondary:hover {
-    background-color: var(--cor-botao-secundario-borda);
-    color: var(--white);
+    background-color: var(--cor-botao-secundario-borda); /* Personalizar */
+    color: var(--white); /* Personalizar */
     transform: translateY(-2px);
 }
 
 /* Header e Navegação */
 header {
-    background-color: var(--cor-cabecalho-fundo);
-    color: var(--cor-cabecalho-texto);
+    background-color: var(--cor-cabecalho-fundo); /* Personalizar */
+    color: var(--cor-cabecalho-texto); /* Personalizar */
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -153,7 +155,7 @@ nav {
 }
 
 .logo a {
-    color: var(--cor-cabecalho-texto);
+    color: var(--cor-cabecalho-texto); /* Personalizar */
     text-decoration: none;
 }
 
@@ -169,11 +171,11 @@ nav {
 }
 
 .nav-links a {
-    color: var(--cor-cabecalho-texto);
+    font-family: 'Arial Nova', sans-serif; /* FONTE ARIAL NOVA */
+    color: var(--cor-cabecalho-texto); /* Personalizar */
     font-weight: 600;
     padding: 5px 0;
     position: relative;
-    font-family: 'Roboto', sans-serif;
 }
 
 .nav-links a::after {
@@ -184,14 +186,14 @@ nav {
     display: block;
     margin-top: 5px;
     right: 0;
-    background: var(--secondary-color);
+    background: var(--secondary-color); /* Personalizar */
     transition: width 0.4s ease;
 }
 
 .nav-links a:hover::after {
     width: 100%;
     left: 0;
-    background: var(--secondary-color);
+    background: var(--secondary-color); /* Personalizar */
 }
 
 .burger {
@@ -206,7 +208,7 @@ nav {
 .burger div {
     width: 100%;
     height: 3px;
-    background-color: var(--cor-cabecalho-texto);
+    background-color: var(--cor-cabecalho-texto); /* Personalizar */
     border-radius: 5px;
     transition: all 0.3s ease;
 }
@@ -214,7 +216,7 @@ nav {
 /* Hero Section */
 .hero-section {
     background: url('close-de-uma-mulher-de-biquini_1048944-22595275.jpg') no-repeat center center/cover;
-    color: var(--cor-cabecalho-texto);
+    color: var(--cor-cabecalho-texto); /* Personalizar */
     text-align: center;
     padding: 150px 20px;
     display: flex;
@@ -232,7 +234,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4); /* Manter semi-transparente para o overlay */
     z-index: -1;
 }
 
@@ -244,95 +246,99 @@ nav {
     font-size: 3.5rem;
     margin-bottom: 20px;
     line-height: 1.2;
-    color: var(--cor-cabecalho-texto);
+    color: var(--cor-cabecalho-texto); /* Personalizar */
 }
 
 /* Destaques de Serviços (Seção Mais Bonita) */
 .destaques-servicos, .galeria-preview, .depoimentos, .contact-form-section, .info-page-content, .instagram-feed {
     padding: 80px 20px;
     text-align: center;
-    background-color: var(--cor-fundo-geral);
+    background-color: var(--cor-fundo-geral); /* Personalizar */
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.destaques-servicos h2, .galeria-preview h2, .depoimentos h2, .contact-form-section h2, .info-page-content h2, .instagram-feed h2 {
+.destaques-servicos h2, .galeria-preview h2, .depoimentos h2, .contact-form-section h2, .info-page-content h2 {
     font-size: 2.5rem;
     margin-bottom: 50px;
-    color: var(--cor-titulo-principal);
+    color: var(--cor-titulo-principal); /* Personalizar */
 }
+/* Removendo títulos do Instagram Feed */
+.instagram-feed h2, .instagram-feed p {
+    display: none; /* Esconde o título e o parágrafo no Instagram Feed */
+}
+
 
 .servicos-grid {
     display: grid;
-    /* Para 6 itens, podemos fazer 3 colunas em telas maiores */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Ajustado para 2 colunas em telas maiores para 4 itens */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    max-width: 1200px; /* Aumentado para melhor visualização dos 6 itens */
+    max-width: 900px; /* Ajustado para 2 colunas */
     margin: 0 auto;
 }
 
 .servico-item {
-    background-color: var(--cor-servico-item-fundo);
-    padding: 30px; /* Aumentado o padding */
-    border-radius: 12px; /* Borda mais arredondada */
-    box-shadow: var(--servico-card-shadow); /* Sombra mais destacada */
+    background-color: var(--cor-servico-item-fundo); /* Personalizar */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--servico-card-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    position: relative; /* Para efeitos de hover mais avançados se necessário */
-    overflow: hidden; /* Garante que a imagem arredondada não vaze */
-    display: flex; /* Para centralizar o conteúdo verticalmente */
+    position: relative;
+    overflow: hidden;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Espaço entre imagem/título/texto/botão */
+    justify-content: space-between;
 }
 
 .servico-item:hover {
-    transform: translateY(-10px) scale(1.02); /* Levemente mais para cima e zoom */
-    box-shadow: var(--servico-card-hover-shadow); /* Sombra ao passar o mouse */
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--servico-card-hover-shadow);
 }
 
 .servico-item img {
     width: 100%;
-    height: 220px; /* Altura um pouco maior para a imagem */
+    height: 220px;
     object-fit: cover;
-    border-radius: 8px; /* Borda da imagem dentro do card */
-    margin-bottom: 20px; /* Mais espaço para o título */
-    transition: transform 0.3s ease; /* Transição para o zoom da imagem no hover */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
 }
 
 .servico-item:hover img {
-    transform: scale(1.03); /* Zoom sutil na imagem ao passar o mouse */
+    transform: scale(1.03);
 }
 
 .servico-item h3 {
-    font-size: 1.6rem; /* Título um pouco maior */
-    color: var(--servico-item-title-color);
-    margin-bottom: 15px; /* Mais espaço para o texto */
-    text-transform: uppercase; /* Deixa o título em caixa alta */
-    letter-spacing: 0.5px; /* Espaçamento entre letras */
+    font-size: 1.6rem;
+    color: var(--servico-item-title-color); /* Personalizar */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .servico-item p {
     font-size: 1rem;
-    color: var(--servico-item-text-color);
+    color: var(--servico-item-text-color); /* Personalizar */
     line-height: 1.7;
-    margin-bottom: 25px; /* Mais espaço antes do botão */
-    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+    margin-bottom: 25px;
+    flex-grow: 1;
 }
 
 .servico-item .btn-primary {
-    align-self: center; /* Centraliza o botão dentro do item */
-    padding: 10px 22px; /* Ajuste no padding do botão */
-    font-size: 0.95rem; /* Ajuste no tamanho da fonte do botão */
-    margin-top: auto; /* Empurra o botão para a parte inferior */
+    align-self: center;
+    padding: 10px 22px;
+    font-size: 0.95rem;
 }
 
 /* Galeria Preview */
 .gallery-grid {
     display: grid;
-    /* Ajustado para 3 colunas em telas maiores para 6 imagens */
+    /* Para 6 imagens, 3 colunas em telas maiores é ideal */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; /* Espaçamento uniforme */
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto 30px auto;
 }
@@ -343,7 +349,7 @@ nav {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    background-color: var(--cor-servico-item-fundo); /* Para preencher se a imagem não carregar */
+    background-color: var(--cor-servico-item-fundo); /* Personalizar */
 }
 
 .gallery-item img {
@@ -364,8 +370,8 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--cor-galeria-overlay);
-    color: var(--white);
+    background-color: var(--cor-galeria-overlay); /* Personalizar */
+    color: var(--white); /* Personalizar */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -380,14 +386,14 @@ nav {
 
 /* Depoimentos */
 .depoimentos {
-    background-color: var(--cor-depoimentos-fundo);
-    color: var(--cor-depoimentos-texto);
+    background-color: var(--cor-depoimentos-fundo); /* Personalizar */
+    color: var(--cor-depoimentos-texto); /* Personalizar */
     padding: 60px 20px;
     border-radius: 10px;
 }
 
 .depoimentos h2 {
-    color: var(--white);
+    color: var(--cor-titulo-principal); /* Personalizar */
 }
 
 .depoimento-carrossel {
@@ -402,8 +408,8 @@ nav {
 
 .depoimento-item {
     flex: 0 0 350px;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: var(--cor-depoimentos-texto);
+    background-color: var(--cor-servico-item-fundo); /* Personalizar */
+    color: var(--cor-depoimentos-texto); /* Personalizar */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -423,13 +429,13 @@ nav {
 
 .depoimento-item span {
     font-weight: 600;
-    color: var(--cor-titulo-principal);
+    color: var(--cor-titulo-principal); /* Personalizar */
 }
 
 /* Footer */
 footer {
-    background-color: var(--cor-rodape-fundo);
-    color: var(--cor-rodape-texto);
+    background-color: var(--cor-rodape-fundo); /* Personalizar */
+    color: var(--cor-rodape-texto); /* Personalizar */
     padding: 50px 20px;
     text-align: center;
 }
@@ -451,7 +457,7 @@ footer {
 }
 
 .footer-section h3 {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Personalizar */
     margin-bottom: 20px;
     font-size: 1.4rem;
 }
@@ -472,22 +478,22 @@ footer {
 }
 
 .footer-section ul li a {
-    color: var(--cor-rodape-texto);
+    color: var(--cor-rodape-texto); /* Personalizar */
     font-size: 0.9rem;
 }
 
 .footer-section ul li a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Personalizar */
 }
 
 .footer-section.social a {
     font-size: 1.8rem;
     margin-right: 15px;
-    color: var(--cor-icones-sociais);
+    color: var(--cor-icones-sociais); /* Personalizar */
 }
 
 .footer-section.social a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Personalizar */
 }
 
 .contact-info span {
@@ -498,16 +504,16 @@ footer {
 
 .contact-info i {
     margin-right: 10px;
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Personalizar */
 }
 
 .footer-bottom {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Manter borda ou personalizar */
     font-size: 0.85rem;
     text-align: center;
-    color: var(--cor-rodape-texto);
+    color: var(--cor-rodape-texto); /* Personalizar */
 }
 
 /* --- Páginas Internas --- */
@@ -517,7 +523,7 @@ footer {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px;
-    background-color: var(--cor-fundo-geral);
+    background-color: var(--cor-fundo-geral); /* Personalizar */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     text-align: left;
@@ -525,14 +531,14 @@ footer {
 
 .info-page-content h1 {
     font-size: 2.8rem;
-    color: var(--cor-titulo-principal);
+    color: var(--cor-titulo-principal); /* Personalizar */
     text-align: center;
     margin-bottom: 30px;
 }
 
 .info-page-content h2 {
     font-size: 2rem;
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Personalizar */
     margin-top: 30px;
     margin-bottom: 15px;
 }
@@ -541,7 +547,7 @@ footer {
     margin-bottom: 15px;
     line-height: 1.7;
     font-size: 1.05rem;
-    color: var(--cor-texto-padrao);
+    color: var(--cor-texto-padrao); /* Personalizar */
 }
 
 .info-page-content ul {
@@ -552,20 +558,20 @@ footer {
 
 .info-page-content ul li {
     margin-bottom: 8px;
-    color: var(--cor-texto-padrao);
+    color: var(--cor-texto-padrao); /* Personalizar */
 }
 
 /* Página de Galeria */
 .gallery-section {
     padding: 80px 20px;
     text-align: center;
-    background-color: var(--cor-fundo-geral);
+    background-color: var(--cor-fundo-geral); /* Personalizar */
 }
 
 .gallery-section h1 {
     font-size: 3rem;
     margin-bottom: 50px;
-    color: var(--cor-titulo-principal);
+    color: var(--cor-titulo-principal); /* Personalizar */
 }
 
 .gallery-categories {
@@ -577,8 +583,8 @@ footer {
 }
 
 .gallery-categories button {
-    background-color: var(--cor-botao-primario-fundo);
-    color: var(--cor-botao-primario-texto);
+    background-color: var(--cor-botao-primario-fundo); /* Personalizar */
+    color: var(--cor-botao-primario-texto); /* Personalizar */
     border: none;
     padding: 10px 25px;
     border-radius: 5px;
@@ -588,13 +594,12 @@ footer {
 }
 
 .gallery-categories button:hover, .gallery-categories button.active {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Personalizar */
     transform: translateY(-2px);
 }
 
 .gallery-full-grid {
     display: grid;
-    /* 3 colunas para a galeria completa também, para consistência */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     max-width: 1200px;
@@ -627,8 +632,8 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--cor-galeria-overlay);
-    color: var(--white);
+    background-color: var(--cor-galeria-overlay); /* Personalizar */
+    color: var(--white); /* Personalizar */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -644,14 +649,14 @@ footer {
 }
 
 .gallery-item-overlay h3 {
-    color: var(--white);
+    color: var(--white); /* Personalizar */
     margin-bottom: 10px;
     font-size: 1.5rem;
 }
 
 .gallery-item-overlay p {
     font-size: 1rem;
-    color: var(--white);
+    color: var(--white); /* Personalizar */
 }
 
 /* Lightbox para Galeria - Adicionado para ampliação */
@@ -684,7 +689,7 @@ footer {
 }
 
 .close-btn {
-    color: var(--white);
+    color: var(--white); /* Personalizar */
     position: absolute;
     top: 15px;
     right: 35px;
@@ -697,7 +702,7 @@ footer {
 
 .close-btn:hover,
 .close-btn:focus {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Personalizar */
     text-decoration: none;
     cursor: pointer;
 }
@@ -709,7 +714,7 @@ footer {
     width: auto;
     padding: 16px;
     margin-top: -50px;
-    color: var(--white);
+    color: var(--white); /* Personalizar */
     font-weight: bold;
     font-size: 25px;
     transition: 0.6s ease;
@@ -741,13 +746,13 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
-    background-color: var(--cor-fundo-geral);
+    background-color: var(--cor-fundo-geral); /* Personalizar */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .servico-completo-item {
-    background-color: var(--cor-servico-item-fundo);
+    background-color: var(--cor-servico-item-fundo); /* Personalizar */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
@@ -767,27 +772,27 @@ footer {
 
 .servico-completo-item h3 {
     font-size: 1.8rem;
-    color: var(--cor-titulo-principal);
+    color: var(--cor-titulo-principal); /* Personalizar */
     margin-bottom: 15px;
 }
 
 .servico-completo-item p {
     font-size: 1rem;
-    color: var(--cor-texto-padrao);
+    color: var(--cor-texto-padrao); /* Personalizar */
     margin-bottom: 15px;
     flex-grow: 1;
 }
 
 .servico-completo-item .btn-primary {
     align-self: flex-start;
-    background-color: var(--cor-botao-primario-fundo);
-    color: var(--cor-botao-primario-texto);
+    background-color: var(--cor-botao-primario-fundo); /* Personalizar */
+    color: var(--cor-botao-primario-texto); /* Personalizar */
     border: none;
     margin-top: auto;
 }
 
 .servico-completo-item .btn-primary:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Personalizar */
     transform: translateY(-2px);
 }
 
@@ -796,7 +801,7 @@ footer {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px;
-    background-color: var(--cor-fundo-geral);
+    background-color: var(--cor-fundo-geral); /* Personalizar */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
@@ -811,8 +816,8 @@ footer {
 
 .contact-form-section .contact-info i {
     font-size: 1.5rem;
+    color: var(--cor-titulo-principal); /* Personalizar */
     margin-right: 10px;
-    color: var(--cor-titulo-principal);
 }
 
 .contact-form-section form {
@@ -829,7 +834,7 @@ footer {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: var(--cor-texto-padrao);
+    color: var(--cor-texto-padrao); /* Personalizar */
 }
 
 .contact-form-section .form-group input[type="text"],
@@ -837,12 +842,12 @@ footer {
 .contact-form-section .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid var(--gray-light);
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Borda padrão leve */
     border-radius: 5px;
     font-size: 1rem;
     box-sizing: border-box;
-    /* background-color: var(--white); */ /* Se quiser um fundo diferente */
-    /* color: var(--text-color); */ /* Se quiser uma cor de texto diferente no input */
+    /* background-color: var(--white); */ /* Personalizar */
+    /* color: var(--text-color); */ /* Personalizar */
 }
 
 .contact-form-section .form-group textarea {
@@ -856,8 +861,8 @@ footer {
 
 .contact-form-section button[type="submit"] {
     grid-column: 1 / -1;
-    background-color: var(--cor-botao-primario-fundo);
-    color: var(--cor-botao-primario-texto);
+    background-color: var(--cor-botao-primario-fundo); /* Personalizar */
+    color: var(--cor-botao-primario-texto); /* Personalizar */
     border: none;
     padding: 15px 30px;
     border-radius: 5px;
@@ -869,7 +874,7 @@ footer {
 }
 
 .contact-form-section button[type="submit"]:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Personalizar */
     transform: translateY(-2px);
 }
 
@@ -877,12 +882,6 @@ footer {
 .instagram-feed {
     text-align: center;
     padding: 80px 20px;
-}
-
-.instagram-feed p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: var(--cor-texto-padrao);
 }
 
 .instagram-posts-grid {
@@ -894,7 +893,7 @@ footer {
 }
 
 .instagram-post-item {
-    background-color: var(--cor-servico-item-fundo);
+    background-color: var(--cor-servico-item-fundo); /* Personalizar */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -917,12 +916,12 @@ footer {
     padding: 15px;
     text-align: left;
     font-size: 0.95rem;
-    color: var(--cor-texto-padrao);
+    color: var(--cor-texto-padrao); /* Personalizar */
 }
 
 .instagram-post-item .post-date {
     font-size: 0.85rem;
-    color: var(--gray-dark);
+    color: var(--gray-dark); /* Personalizar */
     margin-top: 5px;
 }
 
@@ -940,7 +939,7 @@ footer {
         right: 0px;
         height: calc(100vh - 80px);
         top: 80px;
-        background-color: var(--cor-cabecalho-fundo);
+        background-color: var(--cor-cabecalho-fundo); /* Personalizar */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1015,13 +1014,16 @@ footer {
         padding: 60px 20px;
     }
 
-    .destaques-servicos h2, .galeria-preview h2, .depoimentos h2, .contact-form-section h2, .info-page-content h2, .instagram-feed h2 {
+    .destaques-servicos h2, .galeria-preview h2, .depoimentos h2, .contact-form-section h2, .info-page-content h2 {
         font-size: 2rem;
         margin-bottom: 30px;
     }
 
-    .servicos-grid, .gallery-full-grid, .instagram-posts-grid {
+    .servicos-grid {
         grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+    .gallery-full-grid, .instagram-posts-grid {
+        grid-template-columns: 1fr;
     }
 
     .depoimento-carrossel {
@@ -1095,7 +1097,7 @@ footer {
     .btn-primary, .btn-secondary, .btn-whatsapp {
         padding: 10px 20px;
         font-size: 0.9rem;
-        margin-left: 5px; /* Ajuste para botões próximos em telas pequenas */
+        margin-left: 5px;
         margin-right: 5px;
     }
 }
