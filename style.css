@@ -1,5 +1,11 @@
 /* Importação de Fontes (Exemplo: Google Fonts) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+/* Removi a importação antiga de Lora e Montserrat, e adicionei as novas */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Roboto:wght@400;500&display=swap');
+/* Se "Arial Nova" for uma Google Font, adicione a URL correspondente aqui.
+   Caso contrário, ela será uma fonte de sistema (e não precisa de importação via @import).
+   No exemplo, estou usando um link no HTML, que é o padrão para Google Fonts.
+   Se for fonte de sistema, basta especificar no font-family. */
+
 
 :root {
     --primary-color: #8A2BE2; /* Um tom de roxo/lilás, pode ser ajustado */
@@ -10,11 +16,12 @@
     --white: #fff;
     --gray-light: #e0e0e0;
     --gray-dark: #666;
+    --whatsapp-green: #25D366; /* Nova cor para o botão do WhatsApp */
 }
 
 /* Base e Tipografia */
 body {
-    font-family: 'Poppins', sans-serif;
+     font-family: 'Roboto', sans-serif; /* Roboto para todo o texto */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -24,9 +31,17 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+   font-family: 'Fira Sans', sans-serif; /* Fira Sans para títulos */
     color: var(--primary-color);
     margin-bottom: 1rem;
+}
+
+/* Subtítulos específicos, como o 'p' na hero-section, podem ser Arial Nova */
+.hero-content p {
+    font-family: 'Arial Nova', sans-serif; /* Arial Nova para subtítulo do hero */
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: var(--white); /* Mantendo branco ou defina a cor desejada aqui */
 }
 
 a {
@@ -68,6 +83,18 @@ a:hover {
     transform: translateY(-2px);
 }
 
+/* Novo estilo para o botão do WhatsApp */
+.btn-whatsapp {
+    background-color: var(--whatsapp-green); /* Cor verde do WhatsApp */
+    color: var(--white);
+}
+
+.btn-whatsapp:hover {
+    background-color: #20b05b; /* Um verde um pouco mais escuro ao passar o mouse */
+    transform: translateY(-2px);
+}
+
+
 .btn-secondary {
     background-color: transparent;
     color: var(--primary-color);
@@ -101,7 +128,7 @@ nav {
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Fira Sans', sans-serif; /* Usando a nova fonte para o logo */
     font-size: 1.8rem;
     font-weight: 700;
 }
@@ -127,6 +154,7 @@ nav {
     font-weight: 600;
     padding: 5px 0;
     position: relative;
+    font-family: 'Roboto', sans-serif; /* Links de navegação com Roboto */
 }
 
 .nav-links a::after {
@@ -166,8 +194,8 @@ nav {
 
 /* Hero Section */
 .hero-section {
-    background: url"(trancas/background.jpg)" no-repeat center center/cover; /* Substitua pela imagem do header */
-    color: #var(--white);
+    background: url('close-de-uma-mulher-de-biquini_1048944-22595275.jpg') no-repeat center center/cover; /* Substitua pela imagem do header */
+    color: var(--white);
     text-align: center;
     padding: 150px 20px;
     display: flex;
@@ -198,11 +226,6 @@ nav {
     margin-bottom: 20px;
     line-height: 1.2;
     color: var(--white);
-}
-
-.hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
 }
 
 /* Destaques de Serviços */
@@ -262,6 +285,7 @@ nav {
 }
 
 /* Galeria Preview */
+/* Ajustes para o novo comportamento da galeria */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -270,20 +294,46 @@ nav {
     margin: 0 auto 30px auto;
 }
 
-.gallery-grid img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+.gallery-item {
+    position: relative;
+    overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    display: block;
+    transition: transform 0.3s ease;
 }
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(138, 43, 226, 0.6); /* Cor primary com transparência */
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 3rem; /* Tamanho do ícone de lupa */
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
 
 /* Depoimentos */
 .depoimentos {
@@ -556,9 +606,9 @@ footer {
     font-size: 1rem;
 }
 
-/* Lightbox para Galeria */
+/* Lightbox para Galeria - Adicionado para ampliação */
 .lightbox {
-    display: none;
+    display: none; /* Escondido por padrão */
     position: fixed;
     z-index: 10000;
     left: 0;
@@ -567,28 +617,22 @@ footer {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    opacity: 0; /* Começa invisível para transição */
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex; /* Mostra o lightbox */
+    opacity: 1; /* Torna visível */
 }
 
 .lightbox-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    max-width: 90%;
-    max-height: 90vh;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox-content img {
-    max-width: 100%;
-    max-height: 80vh; /* Ajusta a altura da imagem no lightbox */
-    display: block;
-    object-fit: contain;
+    max-width: 90%; /* Largura máxima */
+    max-height: 90vh; /* Altura máxima da viewport */
+    display: block; /* Para a imagem se comportar corretamente */
+    object-fit: contain; /* Garante que a imagem inteira seja visível e não seja cortada */
 }
 
 .close-btn {
@@ -616,14 +660,15 @@ footer {
     top: 50%;
     width: auto;
     padding: 16px;
-    margin-top: -50px;
+    margin-top: -50px; /* Ajusta a posição vertical */
     color: var(--white);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px; /* Ícones de navegação maiores */
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo sutil para os botões */
 }
 
 .next-btn {
@@ -639,6 +684,7 @@ footer {
 .prev-btn:hover, .next-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 
 /* Página de Serviços */
 .servicos-page-grid {
