@@ -17,14 +17,14 @@
     --whatsapp-green: ;
 
     --cor-fundo-geral: #212121;
-    --cor-texto-padrao: #ff;
+    --cor-texto-padrao: #fff;
     --cor-cabecalho-fundo: #212121;
-    --cor-cabecalho-texto: #ff;
-    --cor-titulo-principal: #ff;
-    --cor-subtitulo-hero: #ff;
+    --cor-cabecalho-texto: #fff;
+    --cor-titulo-principal: #fff;
+    --cor-subtitulo-hero: #fff;
     --cor-botao-primario-fundo: ;
-    --cor-botao-primario-texto: #ff;
-    --cor-botao-secundario-borda: #ff;
+    --cor-botao-primario-texto: #fff;
+    --cor-botao-secundario-borda: #fff;
     --cor-botao-secundario-texto: #212121;
     --cor-servico-item-fundo: ;
     --cor-galeria-overlay: ; /* Ex: rgba(0, 0, 0, 0.7) */
