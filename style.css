@@ -1,42 +1,59 @@
 /* Importação de Fontes (Exemplo: Google Fonts) */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Roboto:wght@400;500&display=swap');
+/* Adicionando Arial Nova se for uma fonte personalizada ou considerar uma fallback padrão */
+/* Se "Arial Nova" não for uma fonte padrão do sistema ou uma fonte importada,
+   ela não será renderizada. 'Arial' é uma boa fallback. */
 
 :root {
     /* Variáveis de Cor - PERSONALIZAR AQUI */
-    /* Estas variáveis estão sem valores para que você possa defini-los um por um. */
-    /* Exemplo: --primary-color: #8A2BE2; */
+    /* Cores Globais/Principais (sugestões de preenchimento para um tema escuro com destaques) */
+    --primary-color: #A067E6; /* Um roxo vibrante como cor principal */
+    --secondary-color: #E6B800; /* Um amarelo/dourado para destaque (hover, ícones) */
+    --text-color: #E0E0E0; /* Cor padrão para textos claros em fundos escuros */
+    --light-bg: #333333; /* Fundo claro (para seções que não são tão escuras quanto o body) */
+    --dark-bg: #1A1A1A; /* Fundo mais escuro */
+    --white: #FFFFFF; /* Branco puro */
+    --gray-light: #555555; /* Um cinza claro para bordas, separadores */
+    --gray-dark: #AAAAAA; /* Um cinza mais escuro para textos secundários */
+    --whatsapp-green: #25D366; /* O verde padrão do WhatsApp */
 
-    --primary-color: ;
-    --secondary-color: ;
-    --text-color: #fff;
-    --light-bg: ;
-    --dark-bg: ;
-    --white: ;
-    --gray-light: ;
-    --gray-dark: ;
-    --whatsapp-green: ;
+    /* Cores Específicas para Seções */
 
-    --cor-fundo-geral: #212121;
-    --cor-texto-padrao: #fff;
-    --cor-cabecalho-fundo: #212121;
-    --cor-cabecalho-texto: #fff;
-    --cor-titulo-principal: #fff;
-    --cor-subtitulo-hero: #fff;
-    --cor-botao-primario-fundo: ;
-    --cor-botao-primario-texto: #fff;
-    --cor-botao-secundario-borda: #fff;
-    --cor-botao-secundario-texto: #212121;
-    --cor-servico-item-fundo: ;
-    --cor-galeria-overlay: ; /* Ex: rgba(0, 0, 0, 0.7) */
-    --cor-depoimentos-fundo: ;
-    --cor-depoimentos-texto: ;
-    --cor-rodape-fundo: #212121;
-    --cor-rodape-texto: #fff;
-    --cor-icones-sociais: #fff;
+    /* CORPO DO SITE (BODY) */
+    --cor-fundo-geral: #212121; /* Cor de fundo de TODO o body - Mantida */
+    --cor-texto-padrao: #fff;   /* Cor padrão dos parágrafos no body - Mantida */
+
+    /* CABEÇALHO (HEADER / NAV) */
+    --cor-cabecalho-fundo: #212121; /* Cor de fundo do cabeçalho - Mantida */
+    --cor-cabecalho-texto: #fff;   /* Cor do texto do logo e dos links de navegação no cabeçalho - Mantida */
+
+    /* TÍTULOS GERAIS */
+    --cor-titulo-principal: #fff; /* Cor dos títulos H1, H2, H3 - Mantida */
+    --cor-subtitulo-hero: #fff;  /* Cor do subtítulo na seção Hero - Mantida */
+
+    /* BOTÕES */
+    --cor-botao-primario-fundo: #fff; /* Fundo branco para botão primário - NOVO */
+    --cor-botao-primario-texto: #212121; /* Texto escuro para botão primário - NOVO */
+    --cor-botao-secundario-borda: #fff; /* Borda branca para botão secundário - Mantida */
+    --cor-botao-secundario-texto: #212121; /* Texto escuro para botão secundário - Mantida */
+
+    /* CARDS DE SERVIÇOS E ITENS DE GALERIA/INSTAGRAM */
+    --cor-servico-item-fundo: #333333; /* Fundo dos cards - Sugestão: um tom mais claro que o fundo geral */
+    --cor-galeria-overlay: rgba(0, 0, 0, 0.7); /* Overlay da galeria com transparência - Mantida */
+
+    /* DEPOIMENTOS */
+    --cor-depoimentos-fundo: #1A1A1A; /* Fundo da seção de depoimentos - Sugestão: um tom mais escuro */
+    --cor-depoimentos-texto: #E0E0E0; /* Texto dentro dos cards de depoimento - Sugestão: cinza claro */
+
+    /* RODAPÉ (FOOTER) */
+    --cor-rodape-fundo: #212121; /* Cor de fundo do rodapé - Mantida */
+    --cor-rodape-texto: #fff;    /* Cor do texto no rodapé (links, parágrafos) - Mantida */
+    --cor-icones-sociais: #fff;  /* Cor dos ícones de redes sociais no rodapé - Mantida */
 
     /* Variáveis de sombra - Manter ou personalizar */
-    --servico-card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --servico-card-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    --servico-card-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra um pouco mais forte */
+    --servico-card-hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Sombra mais forte no hover */
+
     /* Cores de texto para o card de serviço - Vão usar as variáveis acima quando definidas */
     --servico-item-title-color: var(--cor-titulo-principal);
     --servico-item-text-color: var(--cor-texto-padrao);
@@ -48,32 +65,35 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: var(--cor-texto-padrao); /* Use a variável para personalizar */
-    background-color: var(--cor-fundo-geral); /* Use a variável para personalizar */
+    color: var(--cor-texto-padrao);
+    background-color: var(--cor-fundo-geral);
     overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Fira Sans', sans-serif;
-    color: var(--cor-titulo-principal); /* Use a variável para personalizar */
+    color: var(--cor-titulo-principal);
     margin-bottom: 1rem;
 }
 
+/* A fonte 'Arial Nova' não é uma fonte web padrão e precisa ser importada ou substituída. */
+/* Se você não importou 'Arial Nova' via @font-face ou Google Fonts/similar, ela não funcionará.
+   Considerarei 'Arial, sans-serif' como fallback, ou você pode importar a fonte se tiver os arquivos. */
 .hero-content p {
-    font-family: 'Arial Nova', sans-serif; /* Se Arial Nova não carregar, ele usará a próxima fonte disponível */
+    font-family: 'Roboto', sans-serif; /* Alterado para Roboto ou você pode importar Arial Nova */
     font-size: 1.3rem;
     margin-bottom: 30px;
-    color: var(--cor-subtitulo-hero); /* Use a variável para personalizar */
+    color: var(--cor-subtitulo-hero);
 }
 
 a {
     text-decoration: none;
-    color: var(--cor-titulo-principal); /* Use a variável para personalizar */
+    color: var(--secondary-color); /* Sugestão: Links com a cor de destaque */
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--secondary-color); /* Use a variável para personalizar */
+    color: var(--primary-color); /* Sugestão: Mudar para a cor primária no hover */
 }
 
 .container {
@@ -89,51 +109,60 @@ a:hover {
     border-radius: 5px;
     font-weight: 600;
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, border-color 0.3s ease; /* Adicionado color e border-color para transição */
     cursor: pointer;
     margin-top: 15px;
+    white-space: nowrap; /* Evita quebra de linha em botões */
 }
 
+/* BOTÃO PRIMÁRIO - Fundo Branco, Texto Escuro */
 .btn-primary {
-    background-color: #fff; /* Personalizar */
-    color: #212121; /* Personalizar */
+    background-color: var(--cor-botao-primario-fundo); /* #fff */
+    color: var(--cor-botao-primario-texto); /* #212121 */
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: var(--secondary-color); /* Personalizar */
+    background-color: var(--secondary-color); /* Mudar para cor de destaque no hover */
+    color: var(--white); /* Texto branco no hover */
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra no hover para destaque */
 }
 
+/* BOTÃO WHATSAPP - Fundo Verde, Texto Branco */
 .btn-whatsapp {
-    background-color: var(--whatsapp-green); /* Personalizar */
-    color: var(--white); /* Personalizar */
+    background-color: var(--whatsapp-green); /* #25D366 */
+    color: var(--white); /* Branco */
     margin-left: 10px;
+    border: none; /* Garante que não tenha borda */
 }
 
 .btn-whatsapp:hover {
-    background-color: ; /* Personalizar */
+    background-color: #1DA851; /* Um tom um pouco mais escuro de verde no hover */
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* BOTÃO SECUNDÁRIO - Fundo Transparente, Borda Branca, Texto Escuro */
 .btn-secondary {
-    background-color: transparent;
-    color: var(--cor-botao-secundario-texto); /* Personalizar */
-    border: 2px solid var(--cor-botao-secundario-borda); /* Personalizar */
+    background-color: var(--cor-botao-secundario-fundo, transparent); /* Fundo transparente (pode ser branco se definido) */
+    color: var(--cor-botao-secundario-texto); /* #212121 */
+    border: 2px solid var(--cor-botao-secundario-borda); /* #fff */
 }
 
 .btn-secondary:hover {
-    background-color: var(--cor-botao-secundario-borda); /* Personalizar */
-    color: var(--white); /* Personalizar */
+    background-color: var(--cor-botao-secundario-borda); /* Fundo vira branco no hover */
+    color: var(--secondary-color); /* Texto vira a cor de destaque no hover */
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Header e Navegação */
 header {
-    background-color: var(--cor-cabecalho-fundo); /* Personalizar */
-    color: var(--cor-cabecalho-texto); /* Personalizar */
+    background-color: var(--cor-cabecalho-fundo);
+    color: var(--cor-cabecalho-texto);
     padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra um pouco mais proeminente */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -155,8 +184,14 @@ nav {
 }
 
 .logo a {
-    color: var(--cor-cabecalho-texto); /* Personalizar */
+    color: var(--cor-cabecalho-texto);
     text-decoration: none;
+    /* Remover a transição de cor do a:hover global para o logo */
+    transition: none;
+}
+
+.logo a:hover {
+    color: var(--cor-cabecalho-texto); /* Garante que o logo não mude de cor no hover */
 }
 
 .nav-links {
@@ -171,11 +206,17 @@ nav {
 }
 
 .nav-links a {
-    font-family: 'Arial Nova', sans-serif; /* FONTE ARIAL NOVA */
-    color: var(--cor-cabecalho-texto); /* Personalizar */
-    font-weight: 600;
+    font-family: 'Roboto', sans-serif; /* Ajustado para Roboto */
+    color: var(--cor-cabecalho-texto);
+    font-weight: 500; /* Um pouco menos bold que o logo */
     padding: 5px 0;
     position: relative;
+    /* Transição de cor para os links de navegação */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color); /* Cor de destaque no hover */
 }
 
 .nav-links a::after {
@@ -185,15 +226,15 @@ nav {
     height: 2px;
     display: block;
     margin-top: 5px;
-    right: 0;
-    background: var(--secondary-color); /* Personalizar */
+    left: 0; /* Começa da esquerda para a direita */
+    background: var(--secondary-color);
     transition: width 0.4s ease;
 }
 
 .nav-links a:hover::after {
     width: 100%;
-    left: 0;
-    background: var(--secondary-color); /* Personalizar */
+    /* left: 0; (Já está assim na definição) */
+    background: var(--secondary-color);
 }
 
 .burger {
@@ -208,7 +249,7 @@ nav {
 .burger div {
     width: 100%;
     height: 3px;
-    background-color: var(--cor-cabecalho-texto); /* Personalizar */
+    background-color: var(--cor-cabecalho-texto);
     border-radius: 5px;
     transition: all 0.3s ease;
 }
@@ -216,7 +257,7 @@ nav {
 /* Hero Section */
 .hero-section {
     background: url('close-de-uma-mulher-de-biquini_1048944-22595275.jpg') no-repeat center center/cover;
-    color: var(--cor-cabecalho-texto); /* Personalizar */
+    color: var(--cor-cabecalho-texto);
     text-align: center;
     padding: 150px 20px;
     display: flex;
@@ -234,7 +275,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Manter semi-transparente para o overlay */
+    background-color: rgba(0, 0, 0, 0.5); /* Aumentado um pouco o overlay para melhor contraste */
     z-index: -1;
 }
 
@@ -246,41 +287,40 @@ nav {
     font-size: 3.5rem;
     margin-bottom: 20px;
     line-height: 1.2;
-    color: var(--cor-cabecalho-texto); /* Personalizar */
+    color: var(--cor-cabecalho-texto);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para melhorar a legibilidade sobre a imagem */
 }
 
 /* Destaques de Serviços (Seção Mais Bonita) */
 .destaques-servicos, .galeria-preview, .depoimentos, .contact-form-section, .info-page-content, .instagram-feed {
     padding: 80px 20px;
     text-align: center;
-    background-color: var(--cor-fundo-geral); /* Personalizar */
-    margin-bottom: 20px;
+    background-color: var(--cor-fundo-geral);
+    margin-bottom: 20px; /* Margem entre seções */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* Sombra mais destacada */
 }
 
 .destaques-servicos h2, .galeria-preview h2, .depoimentos h2, .contact-form-section h2, .info-page-content h2 {
     font-size: 2.5rem;
     margin-bottom: 50px;
-    color: var(--cor-titulo-principal); /* Personalizar */
-}
-/* Removendo títulos do Instagram Feed */
-.instagram-feed h2, .instagram-feed p {
-    display: none; /* Esconde o título e o parágrafo no Instagram Feed */
+    color: var(--cor-titulo-principal);
 }
 
+.instagram-feed h2, .instagram-feed p {
+    display: none;
+}
 
 .servicos-grid {
     display: grid;
-    /* Ajustado para 2 colunas em telas maiores para 4 itens */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    max-width: 900px; /* Ajustado para 2 colunas */
+    max-width: 1200px; /* Alterado para 1200px para permitir 3 ou 4 colunas em telas grandes */
     margin: 0 auto;
 }
 
 .servico-item {
-    background-color: var(--cor-servico-item-fundo); /* Personalizar */
+    background-color: var(--cor-servico-item-fundo);
     padding: 30px;
     border-radius: 12px;
     box-shadow: var(--servico-card-shadow);
@@ -313,7 +353,7 @@ nav {
 
 .servico-item h3 {
     font-size: 1.6rem;
-    color: var(--servico-item-title-color); /* Personalizar */
+    color: var(--servico-item-title-color);
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -321,7 +361,7 @@ nav {
 
 .servico-item p {
     font-size: 1rem;
-    color: var(--servico-item-text-color); /* Personalizar */
+    color: var(--servico-item-text-color);
     line-height: 1.7;
     margin-bottom: 25px;
     flex-grow: 1;
@@ -336,7 +376,6 @@ nav {
 /* Galeria Preview */
 .gallery-grid {
     display: grid;
-    /* Para 6 imagens, 3 colunas em telas maiores é ideal */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     max-width: 1200px;
@@ -345,11 +384,11 @@ nav {
 
 .gallery-item {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* ESSENCIAL para o zoom */
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    background-color: var(--cor-servico-item-fundo); /* Personalizar */
+    background-color: var(--cor-servico-item-fundo);
 }
 
 .gallery-item img {
@@ -357,11 +396,13 @@ nav {
     height: 250px;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
+    /* Transição mais suave para o zoom */
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva mais interessante */
+    will-change: transform; /* Otimização para animação */
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.15); /* Aumentado o zoom um pouco mais */
 }
 
 .gallery-item-overlay {
@@ -370,14 +411,15 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--cor-galeria-overlay); /* Personalizar */
-    color: var(--white); /* Personalizar */
+    background-color: var(--cor-galeria-overlay);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
     font-size: 3rem;
+    pointer-events: none; /* Permite clicar na imagem por baixo do overlay */
 }
 
 .gallery-item:hover .gallery-item-overlay {
@@ -386,14 +428,14 @@ nav {
 
 /* Depoimentos */
 .depoimentos {
-    background-color: var(--cor-depoimentos-fundo); /* Personalizar */
-    color: var(--cor-depoimentos-texto); /* Personalizar */
+    background-color: var(--cor-depoimentos-fundo);
+    color: var(--cor-depoimentos-texto);
     padding: 60px 20px;
     border-radius: 10px;
 }
 
 .depoimentos h2 {
-    color: var(--cor-titulo-principal); /* Personalizar */
+    color: var(--cor-titulo-principal);
 }
 
 .depoimento-carrossel {
@@ -404,21 +446,28 @@ nav {
     gap: 20px;
     padding-bottom: 20px;
     justify-content: center;
+    /* Adicionado para um carrossel mais fluido em telas maiores */
+    flex-wrap: nowrap;
 }
 
 .depoimento-item {
-    flex: 0 0 350px;
-    background-color: var(--cor-servico-item-fundo); /* Personalizar */
-    color: var(--cor-depoimentos-texto); /* Personalizar */
+    flex: 0 0 350px; /* Largura fixa para os itens do carrossel */
+    background-color: var(--cor-servico-item-fundo);
+    color: var(--cor-depoimentos-texto);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
     text-align: center;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 180px;
+    transition: transform 0.3s ease;
+}
+
+.depoimento-item:hover {
+    transform: translateY(-5px); /* Pequeno lift no hover */
 }
 
 .depoimento-item p {
@@ -429,13 +478,13 @@ nav {
 
 .depoimento-item span {
     font-weight: 600;
-    color: var(--cor-titulo-principal); /* Personalizar */
+    color: var(--primary-color); /* Sugestão: Nome do cliente com cor primária */
 }
 
 /* Footer */
 footer {
-    background-color: var(--cor-rodape-fundo); /* Personalizar */
-    color: var(--cor-rodape-texto); /* Personalizar */
+    background-color: var(--cor-rodape-fundo);
+    color: var(--cor-rodape-texto);
     padding: 50px 20px;
     text-align: center;
 }
@@ -457,7 +506,7 @@ footer {
 }
 
 .footer-section h3 {
-    color: var(--secondary-color); /* Personalizar */
+    color: var(--secondary-color); /* Títulos do rodapé com a cor de destaque */
     margin-bottom: 20px;
     font-size: 1.4rem;
 }
@@ -478,22 +527,23 @@ footer {
 }
 
 .footer-section ul li a {
-    color: var(--cor-rodape-texto); /* Personalizar */
+    color: var(--cor-rodape-texto);
     font-size: 0.9rem;
 }
 
 .footer-section ul li a:hover {
-    color: var(--secondary-color); /* Personalizar */
+    color: var(--primary-color); /* Mudar para a cor primária no hover */
 }
 
 .footer-section.social a {
     font-size: 1.8rem;
     margin-right: 15px;
-    color: var(--cor-icones-sociais); /* Personalizar */
+    color: var(--cor-icones-sociais);
+    transition: color 0.3s ease; /* Transição para ícones sociais */
 }
 
 .footer-section.social a:hover {
-    color: var(--secondary-color); /* Personalizar */
+    color: var(--secondary-color); /* Cor de destaque no hover */
 }
 
 .contact-info span {
@@ -504,16 +554,16 @@ footer {
 
 .contact-info i {
     margin-right: 10px;
-    color: var(--secondary-color); /* Personalizar */
+    color: var(--secondary-color);
 }
 
 .footer-bottom {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Manter borda ou personalizar */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Borda mais clara para fundos escuros */
     font-size: 0.85rem;
     text-align: center;
-    color: var(--cor-rodape-texto); /* Personalizar */
+    color: var(--cor-rodape-texto);
 }
 
 /* --- Páginas Internas --- */
@@ -523,22 +573,22 @@ footer {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px;
-    background-color: var(--cor-fundo-geral); /* Personalizar */
+    background-color: var(--cor-servico-item-fundo); /* Usar cor de item de serviço para consistência */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
 
 .info-page-content h1 {
     font-size: 2.8rem;
-    color: var(--cor-titulo-principal); /* Personalizar */
+    color: var(--cor-titulo-principal);
     text-align: center;
     margin-bottom: 30px;
 }
 
 .info-page-content h2 {
     font-size: 2rem;
-    color: var(--secondary-color); /* Personalizar */
+    color: var(--primary-color); /* Títulos internos com a cor primária */
     margin-top: 30px;
     margin-bottom: 15px;
 }
@@ -547,7 +597,7 @@ footer {
     margin-bottom: 15px;
     line-height: 1.7;
     font-size: 1.05rem;
-    color: var(--cor-texto-padrao); /* Personalizar */
+    color: var(--cor-texto-padrao);
 }
 
 .info-page-content ul {
@@ -558,20 +608,20 @@ footer {
 
 .info-page-content ul li {
     margin-bottom: 8px;
-    color: var(--cor-texto-padrao); /* Personalizar */
+    color: var(--cor-texto-padrao);
 }
 
 /* Página de Galeria */
 .gallery-section {
     padding: 80px 20px;
     text-align: center;
-    background-color: var(--cor-fundo-geral); /* Personalizar */
+    background-color: var(--cor-fundo-geral);
 }
 
 .gallery-section h1 {
     font-size: 3rem;
     margin-bottom: 50px;
-    color: var(--cor-titulo-principal); /* Personalizar */
+    color: var(--cor-titulo-principal);
 }
 
 .gallery-categories {
@@ -583,18 +633,19 @@ footer {
 }
 
 .gallery-categories button {
-    background-color: var(--cor-botao-primario-fundo); /* Personalizar */
-    color: var(--cor-botao-primario-texto); /* Personalizar */
+    background-color: var(--cor-botao-primario-fundo);
+    color: var(--cor-botao-primario-texto);
     border: none;
     padding: 10px 25px;
     border-radius: 5px;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
 }
 
 .gallery-categories button:hover, .gallery-categories button.active {
-    background-color: var(--secondary-color); /* Personalizar */
+    background-color: var(--secondary-color);
+    color: var(--white); /* Texto branco no botão de categoria ativo/hover */
     transform: translateY(-2px);
 }
 
@@ -619,11 +670,13 @@ footer {
     height: 300px;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease;
+    /* Transição mais suave para o zoom na galeria completa */
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
 }
 
 .gallery-full-grid .gallery-item:hover img {
-    transform: scale(1.08);
+    transform: scale(1.15); /* Zoom igual ao preview */
 }
 
 .gallery-item-overlay {
@@ -632,8 +685,8 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--cor-galeria-overlay); /* Personalizar */
-    color: var(--white); /* Personalizar */
+    background-color: var(--cor-galeria-overlay);
+    color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -642,6 +695,7 @@ footer {
     transition: opacity 0.4s ease;
     padding: 20px;
     text-align: center;
+    pointer-events: none; /* Permite clicar na imagem por baixo do overlay */
 }
 
 .gallery-full-grid .gallery-item:hover .gallery-item-overlay {
@@ -649,14 +703,14 @@ footer {
 }
 
 .gallery-item-overlay h3 {
-    color: var(--white); /* Personalizar */
+    color: var(--white);
     margin-bottom: 10px;
     font-size: 1.5rem;
 }
 
 .gallery-item-overlay p {
     font-size: 1rem;
-    color: var(--white); /* Personalizar */
+    color: var(--white);
 }
 
 /* Lightbox para Galeria - Adicionado para ampliação */
@@ -669,7 +723,7 @@ footer {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95); /* Fundo mais escuro */
     align-items: center;
     justify-content: center;
     opacity: 0;
@@ -686,14 +740,16 @@ footer {
     max-height: 90vh;
     display: block;
     object-fit: contain;
+    border-radius: 5px; /* Bordas arredondadas na imagem ampliada */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra na imagem ampliada */
 }
 
 .close-btn {
-    color: var(--white); /* Personalizar */
+    color: var(--white);
     position: absolute;
-    top: 15px;
-    right: 35px;
-    font-size: 40px;
+    top: 20px; /* Ajustado para melhor espaçamento */
+    right: 30px; /* Ajustado para melhor espaçamento */
+    font-size: 45px; /* Um pouco maior */
     font-weight: bold;
     transition: 0.3s;
     cursor: pointer;
@@ -702,7 +758,7 @@ footer {
 
 .close-btn:hover,
 .close-btn:focus {
-    color: var(--secondary-color); /* Personalizar */
+    color: var(--primary-color); /* Cor primária no hover */
     text-decoration: none;
     cursor: pointer;
 }
@@ -712,30 +768,30 @@ footer {
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: var(--white); /* Personalizar */
+    padding: 18px; /* Um pouco maior */
+    margin-top: -30px; /* Ajustado para centralizar */
+    color: var(--white);
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px; /* Um pouco maior */
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    border-radius: 5px; /* Bordas arredondadas */
     user-select: none;
     -webkit-user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo um pouco mais escuro */
 }
 
 .next-btn {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    right: 15px; /* Mais próximo da borda */
+    border-radius: 5px 0 0 5px;
 }
 
 .prev-btn {
-    left: 0;
-    border-radius: 0 3px 3px 0;
+    left: 15px; /* Mais próximo da borda */
+    border-radius: 0 5px 5px 0;
 }
 
 .prev-btn:hover, .next-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 /* Página de Serviços */
@@ -746,20 +802,26 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
-    background-color: var(--cor-fundo-geral); /* Personalizar */
+    background-color: var(--cor-fundo-geral);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .servico-completo-item {
-    background-color: var(--cor-servico-item-fundo); /* Personalizar */
+    background-color: var(--cor-servico-item-fundo);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Sombra mais destacada */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-completo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .servico-completo-item img {
@@ -772,27 +834,27 @@ footer {
 
 .servico-completo-item h3 {
     font-size: 1.8rem;
-    color: var(--cor-titulo-principal); /* Personalizar */
+    color: var(--cor-titulo-principal);
     margin-bottom: 15px;
 }
 
 .servico-completo-item p {
     font-size: 1rem;
-    color: var(--cor-texto-padrao); /* Personalizar */
+    color: var(--cor-texto-padrao);
     margin-bottom: 15px;
     flex-grow: 1;
 }
 
 .servico-completo-item .btn-primary {
-    align-self: flex-start;
-    background-color: var(--cor-botao-primario-fundo); /* Personalizar */
-    color: var(--cor-botao-primario-texto); /* Personalizar */
+    align-self: center; /* Centralizado para melhor visual */
+    background-color: var(--cor-botao-primario-fundo);
+    color: var(--cor-botao-primario-texto);
     border: none;
     margin-top: auto;
 }
 
 .servico-completo-item .btn-primary:hover {
-    background-color: var(--secondary-color); /* Personalizar */
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
@@ -801,9 +863,9 @@ footer {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px;
-    background-color: var(--cor-fundo-geral); /* Personalizar */
+    background-color: var(--cor-servico-item-fundo); /* Usar cor de item de serviço para consistência */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -816,7 +878,7 @@ footer {
 
 .contact-form-section .contact-info i {
     font-size: 1.5rem;
-    color: var(--cor-titulo-principal); /* Personalizar */
+    color: var(--primary-color); /* Ícones de contato com a cor primária */
     margin-right: 10px;
 }
 
@@ -824,17 +886,20 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    max-width: 600px; /* Limitar largura do formulário para melhor leitura */
+    margin: 0 auto;
 }
 
 .contact-form-section .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 0; /* Removendo margin-bottom dos form-group para controlar com gap */
 }
 
 .contact-form-section .form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: var(--cor-texto-padrao); /* Personalizar */
+    color: var(--cor-texto-padrao);
+    text-align: left; /* Alinhar labels à esquerda */
 }
 
 .contact-form-section .form-group input[type="text"],
@@ -842,12 +907,17 @@ footer {
 .contact-form-section .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.2); /* Borda padrão leve */
+    border: 1px solid var(--gray-light); /* Borda mais visível e consistente */
     border-radius: 5px;
     font-size: 1rem;
     box-sizing: border-box;
-    /* background-color: var(--white); */ /* Personalizar */
-    /* color: var(--text-color); */ /* Personalizar */
+    background-color: var(--dark-bg); /* Fundo escuro para campos de input */
+    color: var(--cor-texto-padrao); /* Texto claro nos inputs */
+}
+
+.contact-form-section .form-group input::placeholder,
+.contact-form-section .form-group textarea::placeholder {
+    color: var(--gray-dark); /* Cor do placeholder */
 }
 
 .contact-form-section .form-group textarea {
@@ -861,8 +931,8 @@ footer {
 
 .contact-form-section button[type="submit"] {
     grid-column: 1 / -1;
-    background-color: var(--cor-botao-primario-fundo); /* Personalizar */
-    color: var(--cor-botao-primario-texto); /* Personalizar */
+    background-color: var(--cor-botao-primario-fundo);
+    color: var(--cor-botao-primario-texto);
     border: none;
     padding: 15px 30px;
     border-radius: 5px;
@@ -874,7 +944,7 @@ footer {
 }
 
 .contact-form-section button[type="submit"]:hover {
-    background-color: var(--secondary-color); /* Personalizar */
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
@@ -893,7 +963,7 @@ footer {
 }
 
 .instagram-post-item {
-    background-color: var(--cor-servico-item-fundo); /* Personalizar */
+    background-color: var(--cor-servico-item-fundo);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -916,12 +986,12 @@ footer {
     padding: 15px;
     text-align: left;
     font-size: 0.95rem;
-    color: var(--cor-texto-padrao); /* Personalizar */
+    color: var(--cor-texto-padrao);
 }
 
 .instagram-post-item .post-date {
     font-size: 0.85rem;
-    color: var(--gray-dark); /* Personalizar */
+    color: var(--gray-dark);
     margin-top: 5px;
 }
 
@@ -935,19 +1005,21 @@ footer {
     }
 
     .nav-links {
-        position: absolute;
+        position: fixed; /* Alterado para fixed para melhor cobertura */
         right: 0px;
-        height: calc(100vh - 80px);
-        top: 80px;
-        background-color: var(--cor-cabecalho-fundo); /* Personalizar */
+        height: 100vh; /* Ocupa a altura total da viewport */
+        top: 0; /* Começa do topo */
+        background-color: var(--cor-cabecalho-fundo);
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 60%;
+        width: 70%; /* Um pouco mais largo para melhor preenchimento em tablets */
+        max-width: 350px; /* Limite de largura para não ficar muito grande em telas largas */
         transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-        padding-top: 50px;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.5s ease-in-out; /* Transição mais suave */
+        padding-top: 80px; /* Espaço para o cabeçalho fixo */
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.4); /* Sombra mais visível */
+        z-index: 999; /* Garante que fique abaixo do header, mas acima do conteúdo */
     }
 
     .nav-links li {
@@ -956,12 +1028,17 @@ footer {
     }
 
     .nav-links a {
-        font-size: 1.3rem;
+        font-size: 1.4rem; /* Um pouco maior */
         border-bottom: 2px solid transparent;
+        transition: border-color 0.3s ease; /* Transição para a borda */
     }
 
     .nav-links a:hover::after {
-        width: 0;
+        width: 0; /* Remove a linha de baixo no hover do menu mobile */
+    }
+
+    .nav-links a:hover {
+        border-color: var(--secondary-color); /* Adiciona borda inferior no hover do mobile */
     }
 
     .burger {
@@ -981,17 +1058,15 @@ footer {
     .line3.toggle {
         transform: rotate(45deg) translate(-5px, -6px);
     }
-}
 
-/* Animação dos links do menu hamburger */
-@keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
+    /* Ajustes para a seção de serviços/galeria em telas menores */
+    .servicos-grid, .gallery-grid, .gallery-full-grid, .instagram-posts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Permite 2 colunas em tablets */
     }
-    to {
-        opacity: 1;
-        transform: translateX(0px);
+
+    .depoimento-item {
+        flex: 0 0 45%; /* Duas colunas em tablets */
+        max-width: 45%;
     }
 }
 
@@ -1019,11 +1094,8 @@ footer {
         margin-bottom: 30px;
     }
 
-    .servicos-grid {
+    .servicos-grid, .gallery-grid, .gallery-full-grid, .instagram-posts-grid {
         grid-template-columns: 1fr; /* Uma coluna em telas menores */
-    }
-    .gallery-full-grid, .instagram-posts-grid {
-        grid-template-columns: 1fr;
     }
 
     .depoimento-carrossel {
@@ -1034,6 +1106,7 @@ footer {
     .depoimento-item {
         flex: 0 0 90%;
         margin: 0 10px;
+        max-width: 90%; /* Ajuste para preencher melhor a tela */
     }
 
     .footer-content {
@@ -1066,12 +1139,30 @@ footer {
     .servico-completo-item .btn-primary {
         align-self: center;
     }
+    /* Ajustes para o lightbox em telas pequenas */
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 85vh;
+    }
+    .close-btn {
+        font-size: 35px;
+        top: 10px;
+        right: 15px;
+    }
+    .prev-btn, .next-btn {
+        font-size: 20px;
+        padding: 10px;
+        margin-top: -20px;
+    }
+    .prev-btn { left: 5px; }
+    .next-btn { right: 5px; }
 }
 
 /* Telas muito pequenas (até 480px) */
 @media (max-width: 480px) {
     .hero-section {
         min-height: 350px;
+        padding: 80px 15px;
     }
 
     .hero-content h1 {
@@ -1099,5 +1190,33 @@ footer {
         font-size: 0.9rem;
         margin-left: 5px;
         margin-right: 5px;
+        display: block; /* Para que os botões fiquem em blocos em telas muito pequenas */
+        width: calc(100% - 10px); /* Ocupa quase 100% com margem */
+        margin: 10px auto; /* Centraliza */
+    }
+
+    .hero-content .btn-primary, .hero-content .btn-whatsapp {
+        display: block;
+        margin: 15px auto;
+        max-width: 250px; /* Limita a largura para não ficar muito grande */
+    }
+
+    .depoimento-item {
+        flex: 0 0 100%; /* Um item por vez em carrossel em telas muito pequenas */
+        margin: 0;
+        max-width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Animação dos links do menu hamburger */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
     }
 }
