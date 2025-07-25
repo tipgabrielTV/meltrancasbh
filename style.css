@@ -30,8 +30,8 @@
     --cor-galeria-overlay: ; /* Ex: rgba(0, 0, 0, 0.7) */
     --cor-depoimentos-fundo: ;
     --cor-depoimentos-texto: ;
-    --cor-rodape-fundo: ;
-    --cor-rodape-texto: ;
+    --cor-rodape-fundo: 212121;
+    --cor-rodape-texto: fff;
     --cor-icones-sociais: ;
 
     /* Variáveis de sombra - Manter ou personalizar */
