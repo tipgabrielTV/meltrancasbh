@@ -95,8 +95,8 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: var(--cor-botao-primario-fundo); /* Personalizar */
-    color: var(--cor-botao-primario-texto); /* Personalizar */
+    background-color: #fff; /* Personalizar */
+    color: #212121; /* Personalizar */
     border: none;
 }
 
