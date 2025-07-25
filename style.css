@@ -8,7 +8,7 @@
 
     --primary-color: ;
     --secondary-color: ;
-    --text-color: fff;
+    --text-color: #fff;
     --light-bg: ;
     --dark-bg: ;
     --white: ;
@@ -19,20 +19,20 @@
     --cor-fundo-geral: #212121;
     --cor-texto-padrao: #fff;
     --cor-cabecalho-fundo: #212121;
-    --cor-cabecalho-texto: fff;
-    --cor-titulo-principal: fff;
-    --cor-subtitulo-hero: fff;
+    --cor-cabecalho-texto: #fff;
+    --cor-titulo-principal: #fff;
+    --cor-subtitulo-hero: #fff;
     --cor-botao-primario-fundo: ;
-    --cor-botao-primario-texto: ;
-    --cor-botao-secundario-borda: ;
-    --cor-botao-secundario-texto: ;
+    --cor-botao-primario-texto: #fff;
+    --cor-botao-secundario-borda: #fefefe;
+    --cor-botao-secundario-texto: #212121;
     --cor-servico-item-fundo: ;
     --cor-galeria-overlay: ; /* Ex: rgba(0, 0, 0, 0.7) */
     --cor-depoimentos-fundo: ;
     --cor-depoimentos-texto: ;
-    --cor-rodape-fundo: 212121;
-    --cor-rodape-texto: fff;
-    --cor-icones-sociais: fff;
+    --cor-rodape-fundo: #212121;
+    --cor-rodape-texto: #fff;
+    --cor-icones-sociais: #fff;
 
     /* Variáveis de sombra - Manter ou personalizar */
     --servico-card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
